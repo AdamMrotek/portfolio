@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as v;
+.u-center-text {
+  text-align: center;
+}
+.u-flex-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &:not(:last-child) {
+    margin-right: var(v.$section-margin);
+  }
+  flex-wrap: wrap;
+  gap: 8rem;
+}
+.u-margin-8 {
+  margin-top: 8rem;
+}
+.u-margin-4 {
+  margin-top: 4rem;
+}
+.u-padding-8 {
+  padding: 0 8rem;
+}

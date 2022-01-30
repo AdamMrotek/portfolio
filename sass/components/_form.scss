@@ -1,0 +1,90 @@
+@use "../abstracts/variables" as v;
+.form {
+  padding: 3rem 0 0 0;
+  &__input {
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: v.$border-raduis-small;
+    background-color: rgba(v.$color-white, 0.8);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    transition: ease 0.3s all;
+    &::-webkit-input-placeholder {
+      color: v.$color-grey-dark;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: v.$shadow-light-small-1;
+      border-bottom: 3px solid v.$color-primary-dark;
+    }
+    &:focus:invalid {
+      border-bottom: 3px solid v.$color-danger-dark;
+    }
+  }
+  &__lable {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 1.5rem;
+    margin-top: 0.2rem;
+    display: block;
+    transition: ease 0.5s all;
+    opacity: 1;
+    visibility: visible;
+  }
+  &__input:placeholder-shown + &__lable {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-4.5rem);
+    font-size: 1.2rem;
+  }
+  &__radio {
+    &-group {
+      display: inline-block;
+      width: 49%;
+      padding-left: 2.5rem;
+    }
+    &-input {
+      display: none;
+    }
+    &-lable {
+      font-size: v.$default-font-size;
+      cursor: pointer;
+      padding-left: 1rem;
+      position: relative;
+      &::after {
+        content: "";
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid v.$color-primary-light;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        left: -2.1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    &-button {
+      position: relative;
+      &::after {
+        content: "";
+        height: 1.6rem;
+        width: 1.6rem;
+        background-color: v.$color-primary-light;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        left: -2.4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+      }
+    }
+    &-input:checked ~ &-lable &-button::after {
+      opacity: 1;
+    }
+  }
+}
