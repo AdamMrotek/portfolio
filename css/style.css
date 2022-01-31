@@ -829,6 +829,7 @@ body {
   position: absolute;
   bottom: 0rem;
   left: 0rem;
+  width: 10rem;
   height: 40%;
   display: flex;
 }
