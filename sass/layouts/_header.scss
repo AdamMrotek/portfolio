@@ -41,4 +41,12 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
+  &__face-box {
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    // width: 10rem;
+    height: 40%;
+    display: flex;
+  }
 }
