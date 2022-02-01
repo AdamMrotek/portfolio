@@ -66,16 +66,16 @@
   &:link,
   &:visited {
     font-size: v.$default-font-size;
-    color: v.$color-primary;
+    color: v.$color-secondary-light;
     display: inline-block;
     text-decoration: none;
-    border-bottom: 1px solid v.$color-primary;
+    border-bottom: 1px solid v.$color-secondary-light;
     padding: 3px 6px;
     margin: 2rem 0;
     transition: all 0.3s;
   }
   &:hover {
-    background-color: v.$color-primary;
+    background-color: v.$color-secondary-light;
     color: v.$color-white;
     box-shadow: 0 1rem 2rem rgba(v.$color-black, 0.3);
     transform: translateY(-2px);

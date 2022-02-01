@@ -1,0 +1,10 @@
+@use "../abstracts/variables" as v;
+.outline-box {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: v.$color-secondary-light solid 3px;
+  z-index: -1;
+  transform: translate(3rem, 3rem);
+}
