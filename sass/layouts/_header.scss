@@ -4,25 +4,25 @@
   height: 90vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba(v.$color-primary-light, 0.7),
-      rgba(v.$color-primary-dark, 0.75)
+      rgba(v.$color-primary-light, 1),
+      rgba(v.$color-primary-dark, 1)
     ),
     url(../img/hero-small.jpg);
-  /* stretch image to the width of viewport */
+
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0% 100%);
   position: relative;
+  overflow: hidden;
+  padding-bottom: 3rem;
   @include mix.respond(tab-port) {
-    clip-path: polygon(0 0, 100% 0, 100% 82vh, 0% 100%);
   }
   @media (min-resolution: 192dpi) and (min-width: 37.5em),
     (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
     (min-width: 75em) {
     background-image: linear-gradient(
         to right bottom,
-        rgba(v.$color-primary-light, 0.7),
-        rgba(v.$color-primary-dark, 0.1)
+        rgba(v.$color-primary-light, 1),
+        rgba(v.$color-primary-dark, 1)
       ),
       url(../img/hero.jpg);
   }
@@ -30,23 +30,50 @@
     position: absolute;
     top: 4rem;
     left: 4rem;
+    background-color: v.$color-grey-dark-4;
+    color: v.$color-grey-light;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    padding: 1rem;
+    &__a {
+    }
+    &__m {
+      margin-left: 3rem;
+    }
   }
-  &__logo {
-    height: 3rem;
-  }
+
   &__text-box {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    bottom: 0%;
+    right: 0%;
+    margin-right: 8rem;
+    margin-bottom: 8rem;
+    max-width: 40%;
   }
-  &__face-box {
+
+  &__text-decor {
     position: absolute;
-    bottom: 0rem;
-    left: 0rem;
-    width: 10rem;
-    height: 40%;
-    display: flex;
+    bottom: 40%;
+    margin-bottom: 10rem;
+    &__shape {
+      position: absolute;
+      display: inline-block;
+      background-color: rgba(v.$color-primary-dark, 1);
+      height: 40rem;
+      width: 40rem;
+      top: 20%;
+      left: 10rem;
+      // transform: translate(20rem, -30rem);
+    }
   }
 }
+// <div class="header__text-decor">
+// <div class="header__portfolio__shape">&nbsp;</div>
+// </div>
+// <div class="header__text-box">
+//   <h1 class="heading-primary">
+//     <span class="heading-primary--main">   Adam Mrotek</span>
+//     <span class="heading-primary--sub"> Full-stack web developer</span>
+//   <a href="#features" class="btn btn--white btn--animated">Discover projects</a>
+// </h1>
+// </div>

@@ -1,2 +1,18 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as mix;
+.section-about {
+  margin-top: 5rem;
+  padding: 5rem;
+}
+.section-about__details {
+  display: flex;
+  &__text {
+    flex: 1;
+  }
+}
+
+.composition {
+  flex: 1;
+  &__photo {
+  }
+}

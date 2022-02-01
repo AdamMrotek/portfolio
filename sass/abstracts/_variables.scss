@@ -1,6 +1,6 @@
 $color-primary: #7ed56f;
-$color-primary-light: #55c57a;
-$color-primary-dark: #28b485;
+$color-primary-light: #333;
+$color-primary-dark: #222;
 
 $color-secondary-light: #ffb900;
 $color-secondary-dark: #ff7730;
@@ -15,11 +15,22 @@ $color-grey-light: #eee;
 $color-grey-dark: #777;
 $color-grey-dark-2: #999;
 $color-grey-dark-3: #333;
+$color-grey-dark-4: #222;
+
 $color-white: #fff;
 $color-black: #000;
 
 // FONT
 $default-font-size: 1.6rem;
+
+//Lato
+//Light 300, Regular 400, Bold 700
+
+$default-font-family: "Lato", sans-serif;
+
+// Playfair Display
+// Medium 500 , Bold 700 italic
+$decor-font-family: "Playfair Display", serif;
 
 $section-margin: 2rem;
 

@@ -3,19 +3,22 @@
 .heading-primary {
   color: v.$color-white;
   text-transform: uppercase;
+  text-align: left;
   @include mix.respond(tab-land) {
     font-size: 56.25%;
   }
 
   &--main {
     display: block;
-    font-size: 6rem;
-    font-weight: 300;
-    letter-spacing: 3rem;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 2rem;
+    line-height: 5rem;
 
     animation-name: moveInLeft;
     animation-duration: 1.2s;
     animation-timing-function: ease-out;
+    margin-bottom: 3rem;
     /* animation-iteration-count: 3;
     animation-delay: 3s; */
     @include mix.respond(tab-port) {
@@ -33,7 +36,6 @@
     font-weight: 700;
     letter-spacing: 1.1rem;
     margin-bottom: 7rem;
-
     animation: moveInRight 1.2s ease-out;
     @include mix.respond(tab-port) {
       letter-spacing: 0.3em;
@@ -46,8 +48,8 @@
   display: inline-block;
   line-height: 1;
   font-size: 3.5rem;
-  text-transform: uppercase;
   font-weight: 700;
+  text-transform: uppercase;
   background-image: linear-gradient(
     to right bottom,
     rgba(v.$color-primary-light, 0.9),
@@ -60,24 +62,46 @@
   letter-spacing: 2px;
   margin-bottom: 2rem;
   @include mix.respond(tab-port) {
-    font-weight: 500;
     font-size: 2.5rem;
   }
   &:hover {
-    transform: skewY(2deg) skewX(2deg) scale(1.1);
-    text-shadow: 0.5rem 1rem 2rem rgba(v.$color-primary-dark, 0.774);
+    transform: scale(1.1);
   }
   & > * {
     display: inline-block;
   }
 }
 .heading-tertiary {
+  font-family: v.$decor-font-family;
   font-size: 1.6rem;
-  text-transform: uppercase;
+
   font-weight: 700;
   margin-bottom: 1rem;
 }
 .paragraph {
   font-size: 1.4rem;
   margin-bottom: 2rem;
+}
+
+.text-decor {
+  &__text {
+    font-size: 8rem;
+    font-family: v.$decor-font-family;
+    font-weight: 700;
+    font-style: italic;
+    position: absolute;
+    color: v.$color-secondary-light;
+    transform: rotate(-90deg);
+    width: max-content;
+
+    &-1 {
+    }
+    &-2 {
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: v.$color-secondary-light;
+      color: rgba(0, 0, 0, 0);
+      transform: rotate(-90deg) translate(6rem, 5rem);
+      z-index: -0;
+    }
+  }
 }
