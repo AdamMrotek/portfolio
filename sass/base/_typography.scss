@@ -94,14 +94,15 @@
     color: inherit;
     font-style: italic;
     z-index: 3;
+    line-height: 7rem;
     &-1 {
     }
     &-2 {
       position: absolute;
       -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: v.$color-secondary-light;
+      -webkit-text-stroke-color: rgba(v.$color-secondary-light, 0.8);
       color: rgba(0, 0, 0, 0);
-      transform: translate(6rem, -9rem);
+      transform: translate(8rem, -2rem);
       z-index: -0;
       &--grey {
         -webkit-text-stroke-color: rgba(v.$color-grey-dark-4, 0.2);
