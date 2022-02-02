@@ -47,7 +47,6 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #777;
-  padding: 3rem 3rem 0px 3rem;
   box-sizing: border-box;
 }
 @media (max-width: 75em) {
@@ -218,41 +217,40 @@ body {
 
 .feature-box {
   display: flex;
-  flex-wrap: wrap;
+  gap: 3rem;
   justify-content: center;
+  max-width: 120rem;
+  margin: auto;
+  align-items: center;
 }
-
-.feature-box__card {
-  margin: 2rem;
+.feature-box__double {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.7);
+  gap: 3rem;
+}
+
+.feature-box__card {
+  display: flex;
+  height: 30rem;
+  width: 30rem;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
   text-align: center;
-  width: clamp(20rem, 20%, 25rem);
   padding: 1.5rem;
   border-radius: 3px;
   box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.15);
   transition: all 0.3s;
-}
-@media (max-width: 56.25em) {
-  .feature-box__card {
-    width: clamp(20rem, 45%, 50rem);
-  }
-}
-@media (max-width: 37.5em) {
-  .feature-box__card {
-    width: clamp(20rem, 80%, 50rem);
-  }
 }
 .feature-box__card:hover {
   transform: translateY(-1rem) scale(1.03);
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.15);
 }
 .feature-box__card__icon {
-  font-size: 6rem;
-  margin-bottom: 0.5rem;
-  background-image: linear-gradient(to right bottom, rgba(51, 51, 51, 0.7), rgba(34, 34, 34, 0.774));
+  height: 5rem;
+  margin-bottom: 2rem;
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.7), rgba(34, 34, 34, 0.774));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -301,7 +299,7 @@ body {
   background-image: linear-gradient(to right bottom, #333333, #222222);
 }
 .card__side--back--3 {
-  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+  background-image: linear-gradient(to right bottom, #0046ff, #196095);
 }
 .card:hover .card__side--front {
   transform: rotateY(180deg) translateY(-1rem);
@@ -326,7 +324,7 @@ body {
   background-image: linear-gradient(to right bottom, #333333, #222222), url(../img/nat-6.jpg);
 }
 .card__picture--3 {
-  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
+  background-image: linear-gradient(to right bottom, #0046ff, #196095), url(../img/nat-7.jpg);
 }
 .card__heading {
   width: 70%;
@@ -354,7 +352,7 @@ body {
   background: linear-gradient(to right bottom, rgba(51, 51, 51, 0.8), rgba(34, 34, 34, 0.8));
 }
 .card__heading__text--3 {
-  background: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.8));
+  background: linear-gradient(to right bottom, rgba(0, 70, 255, 0.8), rgba(25, 96, 149, 0.8));
 }
 .card__details ul {
   list-style: none;
@@ -827,8 +825,10 @@ body {
 }
 .header__text-decor {
   position: absolute;
-  bottom: 40%;
-  margin-bottom: 10rem;
+  bottom: 0;
+  line-height: 7rem;
+  transform: rotate(-90deg) translate(0rem, 20rem);
+  transform-origin: top left;
 }
 .header__text-decor__shape {
   position: absolute;
@@ -837,7 +837,7 @@ body {
   height: 40rem;
   width: 40rem;
   top: 20%;
-  left: 10rem;
+  left: 15rem;
 }
 
 .outline-box {
@@ -1061,10 +1061,11 @@ body {
 }
 .heading-primary--sub {
   display: block;
-  font-size: 1.6rem;
+  color: #ffb900;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 1.1rem;
-  margin-bottom: 7rem;
+  letter-spacing: 0.3rem;
+  margin-bottom: 3.5rem;
   animation: moveInRight 1.2s ease-out;
 }
 @media (max-width: 56.25em) {
@@ -1080,7 +1081,7 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
-  background-image: linear-gradient(to right bottom, rgba(51, 51, 51, 0.9), rgba(34, 34, 34, 0.9));
+  background-image: linear-gradient(to right bottom, rgba(34, 34, 34, 0.9), rgba(34, 34, 34, 0.9));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1112,21 +1113,28 @@ body {
   margin-bottom: 2rem;
 }
 
+.header__text-decor {
+  color: #ffb900;
+}
+
 .text-decor__text {
   font-size: 8rem;
   font-family: "Playfair Display", serif;
   font-weight: 700;
+  color: inherit;
   font-style: italic;
-  position: absolute;
-  color: #ffb900;
-  transform: rotate(-90deg);
-  width: max-content;
+  z-index: 3;
 }
 .text-decor__text-2 {
+  position: absolute;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #ffb900;
   color: rgba(0, 0, 0, 0);
-  transform: rotate(-90deg) translate(6rem, 5rem);
+  transform: translate(6rem, -9rem);
+  z-index: 0;
+}
+.text-decor__text-2--grey {
+  -webkit-text-stroke-color: rgba(34, 34, 34, 0.2);
   z-index: 0;
 }
 
@@ -1158,8 +1166,10 @@ body {
 }
 
 .section-about {
+  margin: auto;
   margin-top: 5rem;
   padding: 10rem;
+  max-width: 120rem;
 }
 
 .section-about__details {
@@ -1172,13 +1182,20 @@ body {
 
 .about-photo {
   position: relative;
-  flex: 1 1 300px;
+  flex: 1 0 300px;
   display: inline-block;
   height: auto;
   background-size: cover;
   background-position: center center;
   background-blend-mode: color;
   background-image: linear-gradient(to right bottom, #222222, #222222), url(../img/Adam-mrotek-face2-small.jpg);
+}
+
+.section-skills {
+  margin: auto;
+  padding: 10rem;
+  color: #222;
+  background-color: #ffb900;
 }
 
 /*# sourceMappingURL=style.css.map */

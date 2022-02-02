@@ -28,7 +28,8 @@
         <h1 class="heading-primary">
           <span class="heading-primary--main">   Adam Mrotek</span>
           <span class="heading-primary--sub">  I'am full-stack web developer based in London</span>
-        <a href="#features" class="btn btn--white btn--animated">Discover projects</a>
+        <a href="#projects" class="btn btn--white btn--animated">Discover projects</a>
+        <a href="#projects" class="btn btn--white btn--animated">Get in touch</a>
       </h1>
       </div>
      
@@ -41,11 +42,12 @@
     <div class="section-about__details">
       <div class="section-about__detail__text">
         <h3 class="heading-tertiary">Admiration of clever design</h3>
-        <p class="paragraph">In my academic and professional carrer I was</p>
+        <p class="paragraph">
+          A deep understanig of the challange can lead to more creative solutions! Being on the forefront of the design process of technically challenging projects of Airports and Data Centers thought me that even smallest details can make or break an idea.  </p>
         <h3 class="heading-tertiary"> Eye to details (not only architectural)</h3>
-        <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta tempore voluptate, voluptates eveniet perferendis odio. Excepturi, laboriosam. Repellat, quo sequi!</p>
+        <p class="paragraph"> I love brining desing to life trough details. If it is a CGI or a technical envelope solution, it needs deep considaration and shared expirance to become something real.</p>
         <h3 class="heading-tertiary"> Need for growth and dynimic envoriemnt </h3>
-        <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta tempore voluptate, voluptates eveniet perferendis odio. Excepturi, laboriosam. Repellat, quo sequi!</p>
+        <p class="paragraph"> I must confess - making technical details would not be my first choice of specialization. In architecture it requires great deal of interacting with more knowlageable and busy colleague and external companies. Knowing that I always pushed myself for that field to get good at things I was least comfortable with, which in the end gave me a great deal of satisfaction and allowed me to help my peers even more.</p>
         <a href="#" class="btn-text">Download CV in PDF &rarr;</a>
       </div>
       <div class="about-photo">
@@ -58,33 +60,53 @@
   </section>
   <!-- SKILLS -->
   <section class="section-skills" id="skills">
+    <h2 class="text-decor__text text-decor__text-1">
+      Skills
+    </h2 >
+    <h2 class="text-decor__text text-decor__text-2 text-decor__text-2--grey">Skills</h2>
+      
+   
     <div class="feature-box">
     <div class="feature-box__card">
-      <i class="icon-basic-world feature-box__card__icon"></i>
+      <svg class="feature-box__card__icon">
+        <use xlink:href="img/sprite.svg#icon-git" class="icon-gears"></use>
+      </svg>
       <h3 class="heading-tertiary">Tools</h3>
-      <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, iusto?</p>
+      <p class="paragraph">VS code,<br> Git version control,<br> Developer tools, <br> <a class="btn-text" href="https://github.com/AdamMrotek">GitHub</a></p>
     </div>
-    <div class="feature-box__card">
-      <i class="icon-basic-clockwise feature-box__card__icon"></i>
-      <h3 class="heading-tertiary">Front-end technologies</h3>
-      <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, iusto? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, nam?</p>
+
+    <div class="feature-box__double">
+      <div class="feature-box__card">
+        <svg class="feature-box__card__icon">
+          <use xlink:href="img/sprite.svg#icon-images" class="icon-gears"></use>
+        </svg>
+        <h3 class="heading-tertiary">Front-end</h3>
+        <p class="paragraph">JavaScript ES6,<br> CSS/Sass,<br> HTML, <br> React </p>
+      </div>
+      <div class="feature-box__card">
+        <svg class="feature-box__card__icon">
+          <use xlink:href="img/sprite.svg#icon-terminal" class="icon-gears"></use>
+        </svg>
+        <h3 class="heading-tertiary">Back-end</h3>
+        <p class="paragraph">NodeJS,<br>
+          MongoDB Atlas,<br>ExpressJS</p>
+      </div>
+
     </div>
+
     <div class="feature-box__card">
-      <i class="icon-basic-geolocalize-05 feature-box__card__icon"></i>
-      <h3 class="heading-tertiary">Back-end</h3>
-      <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, iusto?</p>
-    </div>
-    <div class="feature-box__card">
-      <i class="icon-basic-picture feature-box__card__icon"></i>
-      <h3 class="heading-tertiary">Soft skills and hobbiesr</h3>
-      <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, iusto?</p>
+      <svg class="feature-box__card__icon">
+        <use xlink:href="img/sprite.svg#icon-paperclip" class="icon-gears"></use>
+      </svg>    
+      <h3 class="heading-tertiary">Soft skills</h3>
+      <p class="paragraph">Responsive design, <br> Accessibility, <br> Asynchronous JS <br></p>
     </div>
   </div>
 
   </section>
 
   <section class="section-projects" id="projects">
-    <h2 class="heading-secondary">Most Popular tours</h2>
+    <h2 class="heading-secondary">Projects</h2>
     <div class="projects-box "> 
         <div class="card">
           <div class="card__side card__side--front">
@@ -127,45 +149,7 @@
 
     
   </section>
-  <section class="section-stories u-padding-8">
-    <!-- <div class="bg-video">
-      <video class="bg-video__content" autoplay muted loop>
-        <source src="img/video.mp4" type="video/mp4" >
-        <source src="img/video.webm" type="video/webm" >
-        Your browser is not supported! Download Firefox or Chrome or something.
-
-      </video>
-    </div> -->
-    <h2 class="heading-secondary u-margin-8 ">Testimonials of fake clinets</h2>
-    <div class="user-testimonial">
-      <figure class="user-testimonial__photo">
-        <img src="img/nat-8.jpg" alt="User image for testimonial" class="user-testimonial__photo__image">
-        <figcaption class="user-testimonial__photo__caption">Johny Bravo</figcaption>
-      </figure>
-      <div class="user-testimonial__text">
-        <div class="float-circle"></div>
-        <h3 class="heading-tertiary">
-          I had the best week ever with my family
-        </h3>
-        <p class="paragraph">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error libero deserunt doloribus Lorem ipsum dolor sit amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, sequi?
-        </p>
-      </div>
-    </div>
-    <div class="user-testimonial  u-margin-8">
-      <figure class="user-testimonial__photo">
-        <img src="img/nat-9.jpg" alt="User image for testimonial" class="user-testimonial__photo__image">
-        <figcaption class="user-testimonial__photo__caption">Jack Snow</figcaption>
-      </figure>
-      <div class="user-testimonial__text">
-        <h3 class="heading-tertiary">
-          I cant belive my luck
-        </h3>
-        <p class="paragraph">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error libero deserunt doloribus Lorem ipsum dolor sit amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, sequi?
-        </p>
-      </div>
-      
+  
     </div>
     <div class="u-margin-8">
       <a href="#" class="  btn-text ">Read all stories &rarr;</a>

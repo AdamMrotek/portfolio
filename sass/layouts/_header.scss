@@ -14,6 +14,7 @@
   position: relative;
   overflow: hidden;
   padding-bottom: 3rem;
+
   @include mix.respond(tab-port) {
   }
   @media (min-resolution: 192dpi) and (min-width: 37.5em),
@@ -53,8 +54,10 @@
 
   &__text-decor {
     position: absolute;
-    bottom: 40%;
-    margin-bottom: 10rem;
+    bottom: 0;
+    line-height: 7rem;
+    transform: rotate(-90deg) translate(0rem, 20rem);
+    transform-origin: top left;
     &__shape {
       position: absolute;
       display: inline-block;
@@ -62,18 +65,7 @@
       height: 40rem;
       width: 40rem;
       top: 20%;
-      left: 10rem;
-      // transform: translate(20rem, -30rem);
+      left: 15rem;
     }
   }
 }
-// <div class="header__text-decor">
-// <div class="header__portfolio__shape">&nbsp;</div>
-// </div>
-// <div class="header__text-box">
-//   <h1 class="heading-primary">
-//     <span class="heading-primary--main">   Adam Mrotek</span>
-//     <span class="heading-primary--sub"> Full-stack web developer</span>
-//   <a href="#features" class="btn btn--white btn--animated">Discover projects</a>
-// </h1>
-// </div>

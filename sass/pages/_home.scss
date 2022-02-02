@@ -1,8 +1,10 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as mix;
 .section-about {
+  margin: auto;
   margin-top: 5rem;
   padding: 10rem;
+  max-width: 120rem;
 }
 .section-about__details {
   display: flex;
@@ -14,7 +16,7 @@
 
 .about-photo {
   position: relative;
-  flex: 1 1 300px;
+  flex: 1 0 300px;
   display: inline-block;
   height: auto;
   background-size: cover;
@@ -27,4 +29,10 @@
       rgba(v.$color-grey-dark-4, 1)
     ),
     url(../img/Adam-mrotek-face2-small.jpg);
+}
+.section-skills {
+  margin: auto;
+  padding: 10rem;
+  color: v.$color-grey-dark-4;
+  background-color: v.$color-secondary-light;
 }

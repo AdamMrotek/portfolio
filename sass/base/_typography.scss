@@ -32,10 +32,11 @@
   }
   &--sub {
     display: block;
-    font-size: 1.6rem;
+    color: v.$color-secondary-light;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 1.1rem;
-    margin-bottom: 7rem;
+    letter-spacing: 0.3rem;
+    margin-bottom: 3.5rem;
     animation: moveInRight 1.2s ease-out;
     @include mix.respond(tab-port) {
       letter-spacing: 0.3em;
@@ -52,8 +53,8 @@
   text-transform: uppercase;
   background-image: linear-gradient(
     to right bottom,
-    rgba(v.$color-primary-light, 0.9),
-    rgba(v.$color-primary-dark, 0.9)
+    rgba(v.$color-grey-dark-4, 0.9),
+    rgba(v.$color-grey-dark-4, 0.9)
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -82,26 +83,30 @@
   font-size: 1.4rem;
   margin-bottom: 2rem;
 }
-
+.header__text-decor {
+  color: v.$color-secondary-light;
+}
 .text-decor {
   &__text {
     font-size: 8rem;
     font-family: v.$decor-font-family;
     font-weight: 700;
+    color: inherit;
     font-style: italic;
-    position: absolute;
-    color: v.$color-secondary-light;
-    transform: rotate(-90deg);
-    width: max-content;
-
+    z-index: 3;
     &-1 {
     }
     &-2 {
+      position: absolute;
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: v.$color-secondary-light;
       color: rgba(0, 0, 0, 0);
-      transform: rotate(-90deg) translate(6rem, 5rem);
+      transform: translate(6rem, -9rem);
       z-index: -0;
+      &--grey {
+        -webkit-text-stroke-color: rgba(v.$color-grey-dark-4, 0.2);
+        z-index: 0;
+      }
     }
   }
 }
