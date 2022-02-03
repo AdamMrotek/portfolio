@@ -1,0 +1,66 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mix;
+
+.project-card {
+  position: relative;
+  display: flex;
+  max-width: 120rem;
+  margin: auto;
+  overflow: hidden;
+  height: 60rem;
+  margin-bottom: 10rem;
+  &:not(:last-of-type) {
+    margin-bottom: 10rem;
+  }
+  &:hover {
+  }
+
+  //PROJECT IMAGE STYLING
+  &__image-cointainer {
+    flex: 1 1 auto;
+    width: 100%;
+    &__image {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      opacity: 0.4;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    right: 0;
+    width: clamp(35rem, 35%, 50rem);
+    background-color: rgba(v.$color-black, 0.9);
+    color: v.$color-grey-light;
+    padding: 4rem;
+    height: 100%;
+
+    &__techno-list {
+      transition: all ease 0.8s;
+      list-style-type: none;
+      &__item {
+        font-size: 2rem;
+        font-weight: 300;
+        margin: 1rem;
+      }
+    }
+  }
+}
+
+// <ul class="project-card__text__techno-list">
+//           <li class="project-card__text__techno-list__item">Mongo DB</li>
+// <div class="project-card">
+// <div class="project-card__image-cointainer">
+//   <img src="img/hellofresh-example.png" alt="" class="">
+// </div>
+// <div class="project-card__text">
+//   <h3 class="heading-tertiary ">Feature Project</h3>
+//   <h2 class="heading-secondary ">BROCCOLI</h2>
+//   <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, nam?</p>
+//   <ul class="project-card__text__techno-list">
+//     <li class="project-card__text__techno-list__item">Mongo DB</li>
+//     <li class="project-card__text__techno-list__item">Express JS</li>
+//   </ul>
+// </div>
+// </div>

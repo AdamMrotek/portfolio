@@ -8,17 +8,19 @@
   max-width: 120rem;
   margin: auto;
   &__double {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3rem;
+    width: clamp(20rem, 40%, 30rem);
   }
   align-items: center;
 }
 .feature-box__card {
   display: flex;
   height: 30rem;
-  width: 30rem;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   background-color: rgba(v.$color-white, 0.9);
@@ -45,7 +47,7 @@
     content: "";
     position: absolute;
     top: 0;
-    width: 30rem;
+    width: 100%;
     height: 30rem;
     z-index: -1;
 
