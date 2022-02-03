@@ -182,12 +182,12 @@ body {
 .btn--white::after {
   background-color: #fff;
 }
-.btn--green {
-  background-color: #7ed56f;
+.btn--secondary {
+  background-color: #ff7730;
   color: #fff;
 }
-.btn--green::after {
-  background-color: #7ed56f;
+.btn--secondary::after {
+  background-color: #ff7730;
 }
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 1.2s;
@@ -201,7 +201,7 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #ffb900;
   padding: 3px 6px;
-  margin: 2rem 0;
+  margin: 2rem 0 0rem 0;
   transition: all 0.3s;
 }
 .btn-text:hover {
@@ -241,11 +241,25 @@ body {
   padding: 1.5rem;
   border-radius: 3px;
   box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.15);
+  z-index: 1;
   transition: all 0.3s;
 }
 .feature-box__card:hover {
   transform: translateY(-1rem) scale(1.03);
-  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.15);
+}
+.feature-box__card:hover::after {
+  opacity: 1;
+}
+.feature-box__card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 30rem;
+  height: 30rem;
+  z-index: -1;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: 0.3s all ease-in-out;
 }
 .feature-box__card__icon {
   height: 5rem;
@@ -257,25 +271,17 @@ body {
   position: relative;
   padding: 2rem;
   height: 50rem;
-  width: clamp(30rem, 15%, 100rem);
+  width: 30rem;
+  display: flex;
   -webkit-perspective: 150rem;
   perspective: 150rem;
-}
-@media (max-width: 75em) {
-  .card {
-    width: clamp(40rem, 25%, 50rem);
-    padding: 0;
-    margin-bottom: 5rem;
-  }
 }
 .card__side {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
   border-radius: 0.5rem;
   box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -291,12 +297,6 @@ body {
 }
 .card__side--back--1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
-}
-.card__side--back--2 {
-  background-image: linear-gradient(to right bottom, #333333, #222222);
-}
-.card__side--back--3 {
-  background-image: linear-gradient(to right bottom, #0046ff, #196095);
 }
 .card:hover .card__side--front {
   transform: rotateY(180deg) translateY(-1rem);
@@ -316,12 +316,6 @@ body {
 }
 .card__picture--1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
-}
-.card__picture--2 {
-  background-image: linear-gradient(to right bottom, #333333, #222222), url(../img/nat-6.jpg);
-}
-.card__picture--3 {
-  background-image: linear-gradient(to right bottom, #0046ff, #196095), url(../img/nat-7.jpg);
 }
 .card__heading {
   width: 70%;
@@ -815,10 +809,10 @@ body {
 .header__text-box {
   position: absolute;
   bottom: 0%;
-  right: 0%;
+  left: 50%;
   margin-right: 8rem;
   margin-bottom: 8rem;
-  max-width: 40%;
+  width: clamp(15rem, 40%, 50rem);
 }
 .header__text-decor {
   position: absolute;
@@ -1164,8 +1158,8 @@ body {
 
 .section-about {
   margin: auto;
-  margin-top: 5rem;
   padding: 10rem;
+  padding-bottom: 15rem;
   max-width: 120rem;
 }
 
@@ -1193,6 +1187,10 @@ body {
   padding: 10rem;
   color: #222;
   background-color: #ffb900;
+}
+
+.section-projects {
+  padding: 10rem;
 }
 
 /*# sourceMappingURL=style.css.map */

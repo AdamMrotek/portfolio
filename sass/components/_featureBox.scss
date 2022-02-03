@@ -23,21 +23,38 @@
   align-items: center;
   background-color: rgba(v.$color-white, 0.9);
   text-align: center;
-
+  padding: 1.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 2rem rgba(v.$color-black, 0.15);
+  z-index: 1;
+  transition: all 0.3s;
   @include mix.respond(tab-port) {
   }
   @include mix.respond(phone) {
   }
 
-  padding: 1.5rem;
-  border-radius: 3px;
-  box-shadow: 0 1.5rem 2rem rgba(v.$color-black, 0.15);
-  transition: all 0.3s;
   &:hover {
     transform: translateY(-1rem) scale(1.03);
-    box-shadow: 0 1.5rem 3rem rgba(v.$color-black, 0.15);
   }
 
+  //better performance shadow with animating opacity
+  &:hover::after {
+    opacity: 1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30rem;
+    height: 30rem;
+    z-index: -1;
+
+    box-shadow: 0 1.5rem 3rem rgba(v.$color-black, 0.1);
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+  }
+
+  //Icon Styling
   &__icon {
     height: 5rem;
     margin-bottom: 2rem;

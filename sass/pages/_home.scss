@@ -2,8 +2,8 @@
 @use "../abstracts/mixins" as mix;
 .section-about {
   margin: auto;
-  margin-top: 5rem;
   padding: 10rem;
+  padding-bottom: 15rem;
   max-width: 120rem;
 }
 .section-about__details {
@@ -35,4 +35,8 @@
   padding: 10rem;
   color: v.$color-grey-dark-4;
   background-color: v.$color-secondary-light;
+}
+
+.section-projects {
+  padding: 10rem;
 }

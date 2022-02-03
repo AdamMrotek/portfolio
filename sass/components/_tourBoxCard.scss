@@ -5,23 +5,24 @@
   position: relative;
   padding: 2rem;
   height: 50rem;
-  width: clamp(30rem, 15%, 100rem);
+  width: 30rem;
+  display: flex;
+  // width: clamp(30rem, 40%, 100rem);
   -webkit-perspective: 150rem;
   perspective: 150rem;
-  @include mix.respond(tab-land) {
-    width: clamp(40rem, 25%, 50rem);
-    padding: 0;
-    margin-bottom: 5rem;
-  }
+  // @include mix.respond(tab-land) {
+  //   width: clamp(40rem, 25%, 50rem);
+  //   padding: 0;
+  //   margin-bottom: 5rem;
+  // }
 
   &__side {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     border-radius: 0.5rem;
     box-shadow: 1rem 1rem 2rem rgba(#000000, 0.1);
     overflow: hidden;
@@ -39,20 +40,6 @@
           to right bottom,
           rgba(v.$color-secondary-light, 1),
           rgba(v.$color-secondary-dark, 1)
-        );
-      }
-      &--2 {
-        background-image: linear-gradient(
-          to right bottom,
-          rgba(v.$color-primary-light, 1),
-          rgba(v.$color-primary-dark, 1)
-        );
-      }
-      &--3 {
-        background-image: linear-gradient(
-          to right bottom,
-          rgba(v.$color-tertiary-light, 1),
-          rgba(v.$color-tertiary-dark, 1)
         );
       }
     }
@@ -83,22 +70,6 @@
           rgba(v.$color-secondary-dark, 1)
         ),
         url(../img/nat-5.jpg);
-    }
-    &--2 {
-      background-image: linear-gradient(
-          to right bottom,
-          rgba(v.$color-primary-light, 1),
-          rgba(v.$color-primary-dark, 1)
-        ),
-        url(../img/nat-6.jpg);
-    }
-    &--3 {
-      background-image: linear-gradient(
-          to right bottom,
-          rgba(v.$color-tertiary-light, 1),
-          rgba(v.$color-tertiary-dark, 1)
-        ),
-        url(../img/nat-7.jpg);
     }
   }
   &__heading {

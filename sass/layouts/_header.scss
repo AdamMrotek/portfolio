@@ -46,10 +46,10 @@
   &__text-box {
     position: absolute;
     bottom: 0%;
-    right: 0%;
+    left: 50%;
     margin-right: 8rem;
     margin-bottom: 8rem;
-    max-width: 40%;
+    width: clamp(15rem, 40%, 50rem);
   }
 
   &__text-decor {
