@@ -5,18 +5,25 @@
   padding: 10rem;
   padding-bottom: 15rem;
   max-width: 120rem;
+  justify-content: center;
 }
 .section-about__details {
   display: flex;
   gap: 4rem;
+  @include mix.respond(tab-port) {
+    flex-direction: column;
+  }
   &__text {
     flex: 1;
   }
 }
 
 .about-photo {
+  margin: auto;
   position: relative;
-  flex: 1 0 300px;
+  flex: 1 0 auto;
+  width: clamp(20rem, 30%, 30rem);
+  min-height: 30rem;
   display: inline-block;
   height: auto;
   background-size: cover;
@@ -38,5 +45,8 @@
 }
 
 .section-projects {
+  padding: 10rem;
+}
+.section-connect {
   padding: 10rem;
 }

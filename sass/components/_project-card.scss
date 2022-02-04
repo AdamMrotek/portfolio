@@ -8,7 +8,7 @@
   margin: auto;
   overflow: hidden;
   height: 60rem;
-  margin-bottom: 10rem;
+
   &:not(:last-of-type) {
     margin-bottom: 10rem;
   }
@@ -39,28 +39,32 @@
     &__techno-list {
       transition: all ease 0.8s;
       list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
       &__item {
+        position: relative;
         font-size: 2rem;
         font-weight: 300;
-        margin: 1rem;
+
+        // border-bottom: solid 1px v.$color-secondary-light;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          border-bottom: solid 1px v.$color-secondary-light;
+          width: 100%;
+          height: 100%;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: ease-in-out 0.3s all;
+          // background-color: lightcoral;
+        }
+        &:hover::after {
+          transform: scaleX(1);
+        }
       }
     }
   }
 }
-
-// <ul class="project-card__text__techno-list">
-//           <li class="project-card__text__techno-list__item">Mongo DB</li>
-// <div class="project-card">
-// <div class="project-card__image-cointainer">
-//   <img src="img/hellofresh-example.png" alt="" class="">
-// </div>
-// <div class="project-card__text">
-//   <h3 class="heading-tertiary ">Feature Project</h3>
-//   <h2 class="heading-secondary ">BROCCOLI</h2>
-//   <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, nam?</p>
-//   <ul class="project-card__text__techno-list">
-//     <li class="project-card__text__techno-list__item">Mongo DB</li>
-//     <li class="project-card__text__techno-list__item">Express JS</li>
-//   </ul>
-// </div>
-// </div>

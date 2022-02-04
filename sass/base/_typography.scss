@@ -111,3 +111,19 @@
     }
   }
 }
+.text-decor-2 {
+  &__text {
+    font-size: 8rem;
+    font-family: v.$decor-font-family;
+    font-weight: 500;
+    color: inherit;
+    font-style: italic;
+    z-index: 3;
+    line-height: 10rem;
+    color: rgba(v.$color-secondary-light, 1);
+  }
+}
+
+.social-media-title {
+  margin: 0;
+}

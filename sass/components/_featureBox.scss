@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as mix;
 .feature-box {
+  display: none;
   display: flex;
   gap: 3rem;
 
@@ -8,12 +9,12 @@
   max-width: 120rem;
   margin: auto;
   &__double {
-    flex: 1;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    width: clamp(20rem, 40%, 30rem);
+    width: clamp(20rem, 30%, 30rem);
   }
   align-items: center;
 }
@@ -30,6 +31,7 @@
   box-shadow: 0 1.5rem 2rem rgba(v.$color-black, 0.15);
   z-index: 1;
   transition: all 0.3s;
+
   @include mix.respond(tab-port) {
   }
   @include mix.respond(phone) {
@@ -58,6 +60,7 @@
 
   //Icon Styling
   &__icon {
+    width: 5rem;
     height: 5rem;
     margin-bottom: 2rem;
     fill: v.$color-secondary-dark;

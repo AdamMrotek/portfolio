@@ -41,13 +41,13 @@
     </h2>
     <div class="section-about__details">
       <div class="section-about__detail__text">
-        <h3 class="heading-tertiary">Admiration of clever design</h3>
-        <p class="paragraph">
-          A deep understanding of the challenge can lead to more creative solutions! Being at the forefront of the design process of technically challenging projects of Airports and Data Centers thought me that even the smallest details can make or break an idea.  </p>
+        <!-- <h3 class="heading-tertiary">Admiration of clever design</h3> -->
+        <!-- <p class="paragraph">
+         Being at the forefront of the design process of technically challenging projects of Airports and Data Centers thought me that even the smallest details can make or break an idea.  </p>
         <h3 class="heading-tertiary"> Eye to details (not only architectural)</h3>
-        <p class="paragraph">  I love bringing design to life through details. If it is a CGI or a technical envelope solution, it needs deep consideration and shared experience to become something real.</p>
+        <p class="paragraph">  I love bringing design to life through details. If it is a CGI or a technical envelope solution, it was my job to gather shared experience of the team and make it real. </p>
         <h3 class="heading-tertiary">Need for growth and dynamic environment</h3>
-        <p class="paragraph">I must confess - making technical details would not be my first choice of specialization. Working on complex technical documentation in architecture, required a great deal of interacting with more knowledgeable and busy colleagues and external companies. Knowing that I always pushed myself for that field to get good at things I was least comfortable with, which in the end gave me a great deal of satisfaction and allowed me to help my peers even more.</p>
+        <p class="paragraph">I must confess - making technical details would not be my first choice of specialization.  Knowing that I always pushed myself for that field to get good at things I was least comfortable with, which in the end gave me a great deal of satisfaction and allowed me to help my peers even more. </p> -->
         <a href="#" class="btn-text">Download CV in PDF &rarr;</a>
       </div>
       <div class="about-photo">
@@ -64,13 +64,13 @@
      
       <div class="feature-box">
         <div class="feature-box__double"> 
-        <div class="feature-box__card">
-          <svg class="feature-box__card__icon">
-            <use xlink:href="img/sprite.svg#icon-git" class="icon-gears"></use>
-          </svg>
-          <h3 class="heading-tertiary">Tools</h3>
-          <p class="paragraph">VS code,<br> Git version control,<br> Developer tools, <br> <a class="btn-text" href="https://github.com/AdamMrotek">GitHub</a></p>
-        </div>
+          <div class="feature-box__card">
+            <svg class="feature-box__card__icon">
+              <use xlink:href="img/sprite.svg#icon-git" class="icon-gears"></use>
+            </svg>
+            <h3 class="heading-tertiary">Tools</h3>
+            <p class="paragraph">VS code,<br> Git version control,<br> Developer tools, <br> <a class="btn-text" href="https://github.com/AdamMrotek">GitHub</a></p>
+          </div>
         </div>
 
       <div class="feature-box__double">
@@ -91,13 +91,13 @@
         </div>
       </div>
       <div class="feature-box__double">
-      <div class="feature-box__card">
-        <svg class="feature-box__card__icon">
-          <use xlink:href="img/sprite.svg#icon-paperclip" class="icon-gears"></use>
-        </svg>    
-        <h3 class="heading-tertiary">Soft skills</h3>
-        <p class="paragraph">Responsive design, <br> Accessibility, <br> Asynchronous JS <br></p>
-      </div>
+        <div class="feature-box__card">
+          <svg class="feature-box__card__icon">
+            <use xlink:href="img/sprite.svg#icon-paperclip" class="icon-gears"></use>
+          </svg>    
+          <h3 class="heading-tertiary">Soft skills</h3>
+          <p class="paragraph">Responsive design, <br> Accessibility, <br> Asynchronous JS <br></p>
+        </div>
     </div>
     </div>
   </section>
@@ -109,7 +109,7 @@
         <img src="img/hellofresh-example.png" alt="" class="project-card__image-cointainer__image">
       </div>
       <div class="project-card__text">
-        <h3 class="heading-tertiary ">Feature Project</h3>
+        <h3 class="heading-tertiary ">Feature Project( in production )</h3>
         <h2 class="heading-primary--sub ">BROCCOLI</h2>
         
         <p class="paragraph">The application idea is an expansion of subscription services like "hello fresh" and "gusto". Members of the community can publish and choose recipes, then the groceries list will be generated</p>
@@ -149,58 +149,75 @@
  
 
   </section>
-  <section class="section-book" id="form">
-    <div class="book">
-        <form action="https://formsubmit.co/ebbd1f4ba44627cc74670458bd5fbec4" method="POST" class="book__form" > 
-          <!-- onsubmit="return false;" -->
-          <div class="u-center-text"> 
-            <h2 class="heading-secondary">Get in touch!</h2>
-          </div>
-          <div class="form">
-            <input type="text" class="form__input" placeholder="Full Name" id="name" required>
+  <section class="section-connect" id="form">
+   
+  
+        <h2 class="text-decor-2__text">Get in touch!</h2>
+      <div class="connect-box">
+        <form action="https://formsubmit.co/ebbd1f4ba44627cc74670458bd5fbec4" method="POST" class="form" > 
+      
+       
+            <input type="text" name="name" class="form__input" placeholder="Name" id="name" required>
             <label for="name" class="form__lable">
-              Full Name
+              Name
             </label>
-          </div>
-          <div class="form" >
-            <input type="email" class="form__input" placeholder="Email" id="email" required>
+        
+      
+            <input type="email" name="email" class="form__input" placeholder="Email" id="email" required>
             <label for="email" class="form__lable">
               Email
             </label>
-          </div>
-          <div class="form">
-            <div class="form__radio-group">
-              <input type="radio" class="form__radio-input" placeholder="" id="small" required name="tour-size">
-              <label for="small" class="form__radio-lable">
-                <span class="form__radio-button"></span>
-                Small tour group
-              </label>
-            </div>
-            <div class="form__radio-group">
-              <input type="radio" class="form__radio-input" placeholder="" id="large" required name="tour-size">
-              <label for="large" class="form__radio-lable">
-                <span class="form__radio-button"></span>
-                Large tour group
-              </label>
+          
+         
+            <textarea class="form__input form__textarea" name="message" placeholder="Message" id="message" required></textarea>
+            <label for="message" class="form__lable">
+              Message
+            </label>
+          
+         
+            <button type="submit" class="btn btn--white btn--animated u-margin-4">Send message &rarr;</button>
+           
+        </form> 
 
-            </div>
-          </div> 
-          <div class="form" >
-            <button class="btn btn--secondary btn--animated u-margin-4">Next step &rarr;</button>
-          </div>     
-        </form>      
+        <div class="cointainer-social-media">
+          <h3 class="heading-secondary social-media-title">
+            Social Media Links
+          </h3>
+          <a class="social-media" href="https://github.com/AdamMrotek">
+            <svg class="social-media__icon">
+              <use xlink:href="img/sprite.svg#icon-github1" class="icon-gears"></use>
+            </svg>
+            <h3 class="heading-tertiary">GitHub</h3>
+          </a>
+          <a class="social-media" href="https://www.linkedin.com/in/adam-mrotek/">
+            <svg class="social-media__icon">
+              <use xlink:href="img/sprite.svg#icon-linkedin"></use>
+            </svg>
+            <h3 class="heading-tertiary">Linked</h3>
+          </a>
+         
+          <a class="social-media" href="">
+            <svg class="social-media__icon">
+              <use xlink:href="img/sprite.svg#icon-hackajob"></use>
+            </svg>
+            <h3 class="heading-tertiary">Hackajob</h3>
+          </a>
+        </div> 
+    
+      </div> 
+            
+            
     </div>
   </section>
 </main> 
     <footer class="footer">
       <div class="footer__logo-box">
-        <picture class="footer__logo">
-          <!-- will use that source if screen width  -->
-          <source srcset=" 2x,img/ 1x" media="(max-width:37.5em)">
-          <!-- otherwise -->
-          <img srcset=" 2x , 1x" alt="Full logo" src=""/>
+      
+          <p class="header__logo-box__a">A</p>
+          <p class="header__logo-box__m">M</p>
+        </div>
 
-        </picture>
+
 
       </div>
       <div class="footer__navigation">
@@ -212,14 +229,14 @@
             <a href="" class="footer__link"> projects</a>
           </li>
           <li class="footer__item">
-            <a href="" class="footer__link"> CV download</a>
+            <a href="img/CV-Adam-Mrotek.pdf" download class="footer__link"> CV download</a>
           </li>
         </ul>
         <p class="footer__copyright">
-          Build by <a href="#" class="footer__link">Adam</a> for the online
+          Build and design by Adam Mrotek for personal
           portfolio.
           <br>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et commodi
+         Page was made with Sass and HTML only
         </p>
       </div>
     </footer>
@@ -240,6 +257,8 @@
 
       </div>
     </div>
+
+  
 
   </body>
 </html>

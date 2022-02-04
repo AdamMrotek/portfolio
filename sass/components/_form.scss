@@ -1,6 +1,20 @@
 @use "../abstracts/variables" as v;
+.connect-box {
+  display: flex;
+  max-width: 120rem;
+  box-shadow: 2rem 2rem rgba(v.$color-primary-dark, 1);
+  background-color: v.$color-secondary-light;
+  padding: 5rem;
+  padding-right: 0;
+  gap: 5rem;
+}
 .form {
-  padding: 3rem 0 0 0;
+  flex: 5;
+
+  &__textarea {
+    height: 20rem;
+    width: 100%;
+  }
   &__input {
     font-size: 1.6rem;
     font-family: inherit;
@@ -10,7 +24,8 @@
     background-color: rgba(v.$color-white, 0.8);
     border: none;
     border-bottom: 3px solid transparent;
-    width: 100%;
+
+    // margin: auto;
     transition: ease 0.3s all;
     &::-webkit-input-placeholder {
       color: v.$color-grey-dark;
@@ -29,6 +44,7 @@
     font-weight: 700;
     margin-left: 1.5rem;
     margin-top: 0.2rem;
+    margin-bottom: 1rem;
     display: block;
     transition: ease 0.5s all;
     opacity: 1;
@@ -40,51 +56,38 @@
     transform: translateY(-4.5rem);
     font-size: 1.2rem;
   }
-  &__radio {
-    &-group {
-      display: inline-block;
-      width: 49%;
-      padding-left: 2.5rem;
-    }
-    &-input {
-      display: none;
-    }
-    &-lable {
-      font-size: v.$default-font-size;
-      cursor: pointer;
-      padding-left: 1rem;
-      position: relative;
-      &::after {
-        content: "";
-        height: 3rem;
-        width: 3rem;
-        border: 5px solid v.$color-primary-light;
-        display: inline-block;
-        border-radius: 50%;
-        position: absolute;
-        left: -2.1rem;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-    &-button {
-      position: relative;
-      &::after {
-        content: "";
-        height: 1.6rem;
-        width: 1.6rem;
-        background-color: v.$color-primary-light;
-        display: inline-block;
-        border-radius: 50%;
-        position: absolute;
-        left: -2.4rem;
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 0;
-      }
-    }
-    &-input:checked ~ &-lable &-button::after {
-      opacity: 1;
-    }
+}
+.cointainer-social-media {
+  color: rgba(v.$color-primary-dark, 1);
+  flex: 3;
+  position: relative;
+  padding: 0rem 3rem;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-around;
+  border-left: white 3px solid;
+  z-index: 2;
+  align-items: center;
+}
+.social-media {
+  &,
+  &:link,
+  &:visited {
+    color: v.$color-grey-dark-4;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: all ease-in-out 0.4s;
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    fill: rgba(v.$color-primary-dark, 1);
   }
 }
