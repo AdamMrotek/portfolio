@@ -7,7 +7,7 @@
   max-width: 120rem;
   margin: auto;
   overflow: hidden;
-  height: 60rem;
+  height: 50rem;
 
   &:not(:last-of-type) {
     margin-bottom: 10rem;
@@ -30,7 +30,7 @@
   &__text {
     position: absolute;
     right: 0;
-    width: clamp(35rem, 35%, 50rem);
+    width: clamp(40rem, 40%, 50rem);
     background-color: rgba(v.$color-black, 0.9);
     color: v.$color-grey-light;
     padding: 4rem;
@@ -40,13 +40,14 @@
       transition: all ease 0.8s;
       list-style-type: none;
       display: flex;
-      flex-direction: column;
+
       align-items: flex-start;
 
       &__item {
         position: relative;
         font-size: 2rem;
         font-weight: 300;
+        margin-right: 2rem;
 
         // border-bottom: solid 1px v.$color-secondary-light;
         &::after {

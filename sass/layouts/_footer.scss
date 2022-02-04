@@ -4,18 +4,17 @@
   position: relative;
 
   background-color: v.$color-grey-dark-3;
-  padding: 2rem 0;
+  padding: 2rem 0 4rem 0;
   font-size: 1.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: v.$color-grey-light;
   @include mix.respond(tab-land) {
-    padding: 0 2rem;
   }
   &__logo-box {
     margin: auto;
-    margin: 3rem;
+    margin: 1rem;
 
     background-color: v.$color-primary-dark;
     display: inline-block;
@@ -60,19 +59,17 @@
       rgba(v.$color-white, 1) 50%
     );
     background-size: 300%;
+    transition: all 1s;
+
     &:link,
     &:visited {
       background-color: v.$color-grey-dark-3;
       color: v.$color-grey-light;
     }
     &:hover {
-      transition: all ease 0.3s;
-      color: v.$color-primary;
-      box-shadow: 0 1rem 2rem rgba(v.$color-black, 0.4);
-      transform: scale(1.1);
       color: rgba(v.$color-grey-dark, 1);
       background-position: 100%;
-      box-shadow: 0 1rem 2rem rgba(v.$color-black, 0.1);
+
       transform: translateX(0.5rem);
     }
   }

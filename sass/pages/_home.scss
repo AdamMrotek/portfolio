@@ -3,7 +3,7 @@
 .section-about {
   margin: auto;
   padding: 10rem;
-  padding-bottom: 15rem;
+
   max-width: 120rem;
   justify-content: center;
 }
@@ -39,7 +39,7 @@
 }
 .section-skills {
   margin: auto;
-  padding: 10rem;
+  padding: 5rem;
   color: v.$color-grey-dark-4;
   background-color: v.$color-secondary-light;
 }
@@ -49,4 +49,6 @@
 }
 .section-connect {
   padding: 10rem;
+  max-width: 120rem;
+  margin: auto;
 }

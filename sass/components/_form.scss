@@ -1,5 +1,6 @@
 @use "../abstracts/variables" as v;
 .connect-box {
+  margin: auto;
   display: flex;
   max-width: 120rem;
   box-shadow: 2rem 2rem rgba(v.$color-primary-dark, 1);
@@ -33,7 +34,7 @@
     &:focus {
       outline: none;
       box-shadow: v.$shadow-light-small-1;
-      border-bottom: 3px solid v.$color-primary-dark;
+      border-bottom: 3px solid v.$color-positive-light;
     }
     &:focus:invalid {
       border-bottom: 3px solid v.$color-danger-dark;
