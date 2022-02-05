@@ -149,6 +149,7 @@ body {
   transition: all 0.2s;
   position: relative;
   font-size: 1.6rem;
+  margin: 1rem;
   border: none;
 }
 .btn:hover {
@@ -216,7 +217,6 @@ body {
 }
 
 .feature-box {
-  display: none;
   display: flex;
   gap: 3rem;
   justify-content: center;
@@ -224,13 +224,27 @@ body {
   margin: auto;
   align-items: center;
 }
+@media (max-width: 37.5em) {
+  .feature-box {
+    flex-direction: column;
+    margin-top: 5rem;
+  }
+}
 .feature-box__double {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  width: clamp(20rem, 30%, 30rem);
+  width: clamp(20rem, 100%, 30rem);
+}
+@media (max-width: 37.5em) {
+  .feature-box__double {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+  }
 }
 
 .feature-box__card {
@@ -246,6 +260,11 @@ body {
   box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.15);
   z-index: 1;
   transition: all 0.3s;
+}
+@media (max-width: 37.5em) {
+  .feature-box__card {
+    width: 20rem;
+  }
 }
 .feature-box__card:hover {
   transform: translateY(-1rem) scale(1.03);
@@ -374,6 +393,13 @@ body {
   padding-right: 0;
   gap: 5rem;
 }
+@media (max-width: 37.5em) {
+  .connect-box {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 3rem;
+  }
+}
 
 .form {
   flex: 5;
@@ -434,6 +460,15 @@ body {
   z-index: 2;
   align-items: center;
 }
+@media (max-width: 37.5em) {
+  .cointainer-social-media {
+    border: none;
+    flex-direction: row;
+  }
+  .cointainer-social-media > h3 {
+    display: none;
+  }
+}
 
 .social-media, .social-media:link, .social-media:visited {
   color: #222;
@@ -443,6 +478,16 @@ body {
   align-items: center;
   gap: 1rem;
   transition: all ease-in-out 0.4s;
+}
+@media (max-width: 37.5em) {
+  .social-media, .social-media:link, .social-media:visited {
+    border: 1px solid #222222;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 3px;
+    flex: 0 0 10rem;
+    box-shadow: 2px 2px #222222;
+  }
 }
 .social-media:hover {
   transform: scale(1.2);
@@ -649,11 +694,6 @@ body {
   overflow: hidden;
   padding-bottom: 3rem;
 }
-@media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 75em) {
-  .header {
-    background-image: linear-gradient(to right bottom, #333333, #222222), url(../img/hero.jpg);
-  }
-}
 .header__logo-box {
   position: absolute;
   top: 4rem;
@@ -673,13 +713,29 @@ body {
   left: 50%;
   margin-right: 8rem;
   margin-bottom: 8rem;
-  width: clamp(15rem, 40%, 50rem);
+}
+@media (max-width: 37.5em) {
+  .header__text-box {
+    margin: 4rem;
+    left: 0%;
+  }
 }
 .header__text-decor {
+  color: #ffb900;
   position: absolute;
   bottom: 0;
+  height: 10rem;
+  display: inline-block;
+  flex: 0 1 150px;
+  width: max-content;
   transform: rotate(-90deg) translate(0rem, 20rem);
   transform-origin: top left;
+}
+@media (max-width: 37.5em) {
+  .header__text-decor {
+    display: none;
+    opacity: 0.5;
+  }
 }
 .header__text-decor__shape {
   position: absolute;
@@ -844,6 +900,12 @@ body {
 .project-card:not(:last-of-type) {
   margin-bottom: 10rem;
 }
+@media (max-width: 37.5em) {
+  .project-card {
+    flex-direction: column;
+    height: auto;
+  }
+}
 .project-card__image-cointainer {
   flex: 1 1 auto;
   width: 100%;
@@ -863,6 +925,13 @@ body {
   padding: 4rem;
   height: 100%;
 }
+@media (max-width: 37.5em) {
+  .project-card__text {
+    width: 100%;
+    position: relative;
+    padding: 3rem;
+  }
+}
 .project-card__text__techno-list {
   transition: all ease 0.8s;
   list-style-type: none;
@@ -874,6 +943,7 @@ body {
   font-size: 2rem;
   font-weight: 300;
   margin-right: 2rem;
+  white-space: nowrap;
 }
 .project-card__text__techno-list__item::after {
   content: "";
@@ -1021,10 +1091,6 @@ body {
   margin-bottom: 2rem;
 }
 
-.header__text-decor {
-  color: #ffb900;
-}
-
 .text-decor__text {
   font-size: 8rem;
   font-family: "Playfair Display", serif;
@@ -1033,6 +1099,11 @@ body {
   font-style: italic;
   z-index: 3;
   line-height: 7rem;
+}
+@media (max-width: 37.5em) {
+  .text-decor__text {
+    font-size: 5rem;
+  }
 }
 .text-decor__text-2 {
   position: absolute;
@@ -1133,11 +1204,22 @@ body {
 .section-projects {
   padding: 10rem;
 }
+@media (max-width: 37.5em) {
+  .section-projects {
+    padding: 2rem;
+    padding-top: 10vh;
+  }
+}
 
 .section-connect {
   padding: 10rem;
   max-width: 120rem;
   margin: auto;
+}
+@media (max-width: 37.5em) {
+  .section-connect {
+    padding: 10vh 3rem 10vh 3rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

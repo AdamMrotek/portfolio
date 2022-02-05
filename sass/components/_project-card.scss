@@ -12,7 +12,9 @@
   &:not(:last-of-type) {
     margin-bottom: 10rem;
   }
-  &:hover {
+  @include mix.respond(phone) {
+    flex-direction: column;
+    height: auto;
   }
 
   //PROJECT IMAGE STYLING
@@ -35,6 +37,11 @@
     color: v.$color-grey-light;
     padding: 4rem;
     height: 100%;
+    @include mix.respond(phone) {
+      width: 100%;
+      position: relative;
+      padding: 3rem;
+    }
 
     &__techno-list {
       transition: all ease 0.8s;
@@ -48,6 +55,7 @@
         font-size: 2rem;
         font-weight: 300;
         margin-right: 2rem;
+        white-space: nowrap;
 
         // border-bottom: solid 1px v.$color-secondary-light;
         &::after {

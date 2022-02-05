@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mix;
 .connect-box {
   margin: auto;
   display: flex;
@@ -8,6 +9,11 @@
   padding: 5rem;
   padding-right: 0;
   gap: 5rem;
+  @include mix.respond(phone) {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 3rem;
+  }
 }
 .form {
   flex: 5;
@@ -25,8 +31,6 @@
     background-color: rgba(v.$color-white, 0.8);
     border: none;
     border-bottom: 3px solid transparent;
-
-    // margin: auto;
     transition: ease 0.3s all;
     &::-webkit-input-placeholder {
       color: v.$color-grey-dark;
@@ -70,6 +74,13 @@
   border-left: white 3px solid;
   z-index: 2;
   align-items: center;
+  @include mix.respond(phone) {
+    border: none;
+    flex-direction: row;
+    & > h3 {
+      display: none;
+    }
+  }
 }
 .social-media {
   &,
@@ -82,7 +93,16 @@
     align-items: center;
     gap: 1rem;
     transition: all ease-in-out 0.4s;
+    @include mix.respond(phone) {
+      border: 1px solid rgba(v.$color-primary-dark, 1);
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 3px;
+      flex: 0 0 10rem;
+      box-shadow: 2px 2px rgba(v.$color-primary-dark, 1);
+    }
   }
+
   &:hover {
     transform: scale(1.2);
   }

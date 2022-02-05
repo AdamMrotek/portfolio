@@ -46,9 +46,16 @@
 
 .section-projects {
   padding: 10rem;
+  @include mix.respond(phone) {
+    padding: 2rem;
+    padding-top: 10vh;
+  }
 }
 .section-connect {
   padding: 10rem;
   max-width: 120rem;
   margin: auto;
+  @include mix.respond(phone) {
+    padding: 10vh 3rem 10vh 3rem;
+  }
 }
