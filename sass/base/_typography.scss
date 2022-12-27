@@ -19,8 +19,6 @@
     animation-duration: 1.2s;
     animation-timing-function: ease-out;
     margin-bottom: 3rem;
-    /* animation-iteration-count: 3;
-    animation-delay: 3s; */
     @include mix.respond(tab-port) {
       letter-spacing: 1rem;
       font-size: 4rem;
@@ -34,10 +32,13 @@
     display: block;
     color: v.$color-secondary-light;
     font-size: 2rem;
+    text-transform: none;
+
     font-weight: 700;
     letter-spacing: 0.3rem;
     margin-bottom: 3.5rem;
     animation: moveInRight 1.2s ease-out;
+    text-transform: none;
     @include mix.respond(tab-port) {
       letter-spacing: 0.3em;
       font-size: 1.4rem;
