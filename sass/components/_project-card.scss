@@ -25,6 +25,10 @@
       object-fit: cover;
       height: 100%;
       opacity: 0.4;
+      @include mix.respond(phone) {
+        opacity: 0.8;
+        width: 100%;
+      }
     }
   }
 

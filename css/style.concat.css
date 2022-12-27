@@ -1360,6 +1360,12 @@ body {
   height: 100%;
   opacity: 0.4;
 }
+@media (max-width: 37.5em) {
+  .project-card__image-cointainer__image {
+    opacity: 0.8;
+    width: 100%;
+  }
+}
 .project-card__text {
   position: absolute;
   right: 0;
