@@ -30,7 +30,7 @@
           <span class="heading-primary--main">   Adam Mrotek</span>
           <span class="heading-primary--sub">  As a front-end developer with expertise in React, I craft intuitive and visually stunning websites that deliver a seamless user experience. Let's work together to bring your project to life and make a lasting impact on your audience.</span>
         <a href="#projects" class="btn btn--white btn--animated">Discover projects</a>
-        <a href="#form" class="btn btn--white btn--animated">Get in touch</a>
+        <a href="#form" class="btn btn--outline btn--animated">Get in touch</a>
       </h1>
       </div>
      
@@ -41,7 +41,7 @@
       <h2 class="heading-secondary">Projects</h2>
       <div class="project-card">
         <div class="project-card__image-cointainer">
-          <img src="img/hellofresh-example.jpg" alt="" class="project-card__image-cointainer__image">
+          <img src="img/broccoli-screenshot.jpg" alt="broccoli screenshot" class="project-card__image-cointainer__image">
         </div>
         <div class="project-card__text">
           <h3 class="heading-tertiary ">Feature Project</h3>
@@ -51,6 +51,9 @@
           <ul class="project-card__text__techno-list">
             <li class="project-card__text__techno-list__item">Firebase</li>
             <li class="project-card__text__techno-list__item">React JS</li>
+            <li class="project-card__text__techno-list__item">Framer Motion</li>
+            <li class="project-card__text__techno-list__item">Hooks</li>
+            <li class="project-card__text__techno-list__item">Context API</li>
           </ul>
   
           <a target="_blank" href="https://broccoli-55235.firebaseapp.com/" class="btn  btn--animated  btn--white u-margin-4">Live version &rarr;</a>    <div class="">
@@ -60,7 +63,30 @@
       </div>
       <div class="project-card">
         <div class="project-card__image-cointainer">
-          <img src="img/Library-example.jpg" alt="" class="project-card__image-cointainer__image">
+          <img src="img/drony-screenshot.jpg" alt="drony screenshot" class="project-card__image-cointainer__image">
+        </div>
+        <div class="project-card__text">
+          <h3 class="heading-tertiary ">Tech Demo</h3>
+          <h2 class="heading-primary--sub ">DRONY</h2>
+          
+          <p class="paragraph">Shows the position of the drone on google maps. This app has been build with lastes vesrions of Next Js (v13) and React (v18), updates live with database inputs and can be downloaded as Progresive Web App</p>
+          <ul class="project-card__text__techno-list">
+            <li class="project-card__text__techno-list__item">Firebase</li>
+            <li class="project-card__text__techno-list__item">React JS</li>
+            <li class="project-card__text__techno-list__item">Next JS</li>
+            <li class="project-card__text__techno-list__item">Tailwind CSS</li>
+            <li class="project-card__text__techno-list__item">TypeScript</li>
+            <li class="project-card__text__techno-list__item">Vercel</li>
+          </ul>
+  
+          <a target="_blank" href="https://drone-delivery-mu.vercel.app/login" class="btn  btn--animated  btn--white u-margin-4">Live version &rarr;</a>    <div class="">
+            <a  target="_blank" href="https://github.com/AdamMrotek/drone-delivery" class=" btn-text ">Git Repo &rarr;</a>
+          </div> 
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card__image-cointainer">
+          <img src="img/Library-example.jpg" alt="library screenshot" class="project-card__image-cointainer__image">
         </div>
         <div class="project-card__text">
           <h3 class="heading-tertiary ">Server-Side Rendering</h3>
@@ -148,9 +174,9 @@
   </section>
 
 
-  <section class="section-about">
+  <section class="section-about" id="about">
     <h2 class="heading-secondary">
-      What are my motovations!
+      What are my motivations!
     </h2>
     <div class="section-about__details">
       <div class="section-about__detail__text">
@@ -158,7 +184,6 @@
         <h3 class="heading-tertiary">Need for growth and dynamic environment</h3>
         
         <p class="paragraph"> As a self-taught engineer, I am constantly striving to stay up to date with the latest web development trends and technologies. I am proficient in using the right tools and am always eager to learn new skills and techniques to further enhance my abilities. Being a father has also taught me the value of dedication and hard work, and I bring that same level of commitment to every project I take on. Whether it's building a custom website from scratch or implementing the latest features and functionality <br/>
-        <a href="img/CV-Adam-Mrotek.pdf" download  class="btn-text">Download CV in PDF &rarr;</a>
       </div>
       <div class="about-photo">
         <div class="outline-box"> &nbsp;</div>
@@ -217,12 +242,6 @@
             <h3 class="heading-tertiary">Linked</h3>
           </a>
          
-          <a class="social-media" href="">
-            <svg class="social-media__icon">
-              <use xlink:href="img/sprite.svg#icon-hackajob"></use>
-            </svg>
-            <h3 class="heading-tertiary">Hackajob</h3>
-          </a>
         </div> 
     
       </div> 
@@ -236,13 +255,10 @@
       <div class="footer__navigation">
         <ul class="footer__list">
           <li class="footer__item">
-            <a href="" class="footer__link"> about</a>
+            <a href="#about" class="footer__link"> about</a>
           </li>
           <li class="footer__item">
-            <a href="" class="footer__link"> projects</a>
-          </li>
-          <li class="footer__item">
-            <a href="img/CV-Adam-Mrotek.pdf" download class="footer__link"> CV download</a>
+            <a href="#projects" class="footer__link"> projects</a>
           </li>
         </ul>
         <p class="footer__copyright">
@@ -258,25 +274,5 @@
       </div>
     </div>
     </footer>
-    <div class="popup" id="popup">
-      <a href="#" class="popup__background"></a>
-      <div class="popup__content">
-        <a href="#" class="popup__close">&times;</a>
-        <div class="popup__content__images">
-          <img src="" alt="" class="">
-          <img src="" alt="" class="">
-        </div>
-        <div class="popup__content__text">
-          <h2 class="heading-secondary">Conncect on other platforms</h2>
-          <h3 class="heading-tertiary"></h3>
-          <p class="paragraph popup__content__paragraph">  </p>
-          <a class="btn btn--secondary btn--animated" href="#form">Downlaod CV&rarr;</a>
-        </div>
-
-      </div>
-    </div>
-
-  
-
   </body>
 </html>

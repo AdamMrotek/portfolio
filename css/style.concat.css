@@ -586,7 +586,9 @@ body {
   object-fit: cover;
 }
 
-.btn, .btn:link, .btn:visited {
+.btn,
+.btn:link,
+.btn:visited {
   text-decoration: none;
   padding: 1.5rem 4rem;
   display: inline-block;
@@ -600,7 +602,8 @@ body {
   transform: translate(0, -0.3rem);
   box-shadow: 0 0.5rem 1.5rem rgba(43, 43, 43, 0.3);
 }
-.btn:active, .btn:focus {
+.btn:active,
+.btn:focus {
   outline: none;
   transform: translate(0, 1px);
   box-shadow: 0 0.5rem 1rem rgba(43, 43, 43, 0.4);
@@ -639,7 +642,8 @@ body {
   animation-fill-mode: backwards;
 }
 
-.btn-text:link, .btn-text:visited {
+.btn-text:link,
+.btn-text:visited {
   font-size: 1.6rem;
   color: #ffb900;
   display: inline-block;
@@ -915,7 +919,9 @@ body {
   }
 }
 
-.social-media, .social-media:link, .social-media:visited {
+.social-media,
+.social-media:link,
+.social-media:visited {
   color: #222;
   text-decoration: none;
   display: flex;
@@ -925,7 +931,9 @@ body {
   transition: all ease-in-out 0.4s;
 }
 @media (max-width: 37.5em) {
-  .social-media, .social-media:link, .social-media:visited {
+  .social-media,
+  .social-media:link,
+  .social-media:visited {
     border: 1px solid #222222;
     padding: 1rem;
     margin: 1rem;
@@ -984,7 +992,8 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
   }
 }
-.popup__close:link, .popup__close:visited {
+.popup__close:link,
+.popup__close:visited {
   line-height: 0.55;
   text-decoration: none;
   font-size: 5rem;
@@ -997,7 +1006,8 @@ body {
   cursor: pointer;
   z-index: 15;
 }
-.popup__close:link:hover, .popup__close:visited:hover {
+.popup__close:link:hover,
+.popup__close:visited:hover {
   color: #333;
 }
 .popup__content {
@@ -1111,11 +1121,17 @@ body {
   text-transform: uppercase;
   padding: 0.5rem;
   text-decoration: none;
-  background-image: linear-gradient(105deg, transparent 0%, transparent 50%, white 50%);
+  background-image: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%
+  );
   background-size: 300%;
   transition: all 1s;
 }
-.footer__link:link, .footer__link:visited {
+.footer__link:link,
+.footer__link:visited {
   background-color: #333;
   color: #eee;
 }
@@ -1132,7 +1148,8 @@ body {
 
 .header {
   height: 90vh;
-  background-image: linear-gradient(to right bottom, #333333, #222222), url(../img/hero-small.jpg);
+  background-image: linear-gradient(to right bottom, #333333, #222222),
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
@@ -1202,7 +1219,8 @@ body {
   transform: translate(3rem, 3rem);
 }
 
-.navigation__checkbox, .navigation__checkbox__off {
+.navigation__checkbox,
+.navigation__checkbox__off {
   display: none;
 }
 .navigation__checkbox:checked ~ .navigation__background {
@@ -1234,7 +1252,9 @@ body {
   left: 1.7rem;
   transition: rotate 6s;
 }
-.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+.navigation__icon,
+.navigation__icon::before,
+.navigation__icon::after {
   width: 3.5rem;
   height: 3px;
   background-color: #999;
@@ -1242,7 +1262,8 @@ body {
   display: inline-block;
   transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
 }
-.navigation__icon::before, .navigation__icon::after {
+.navigation__icon::before,
+.navigation__icon::after {
   content: "";
   position: absolute;
 }
@@ -1315,10 +1336,16 @@ body {
   text-transform: uppercase;
   text-decoration: none;
 }
-.navigation__link:link, .navigation__link:visited {
+.navigation__link:link,
+.navigation__link:visited {
   color: white;
   display: inline-block;
-  background-image: linear-gradient(105deg, transparent 0%, transparent 50%, white 50%);
+  background-image: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%
+  );
   background-size: 300%;
   padding: 0rem 1rem;
   transition: all ease 0.8s;
@@ -1386,6 +1413,7 @@ body {
   transition: all ease 0.8s;
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
 }
 .project-card__text__techno-list__item {
@@ -1509,7 +1537,11 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
-  background-image: linear-gradient(to right bottom, rgba(34, 34, 34, 0.9), rgba(34, 34, 34, 0.9));
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(34, 34, 34, 0.9),
+    rgba(34, 34, 34, 0.9)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1641,7 +1673,8 @@ body {
   background-size: cover;
   background-position: center center;
   background-blend-mode: color;
-  background-image: linear-gradient(to right bottom, #222222, #222222), url(../img/Adam-mrotek-face2-small.jpg);
+  background-image: linear-gradient(to right bottom, #222222, #222222),
+    url(../img/Adam-mrotek-face2-small.jpg);
 }
 
 .section-skills {
