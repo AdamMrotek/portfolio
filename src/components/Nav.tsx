@@ -22,11 +22,18 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-3 py-1.5 text-sm text-ink-soft transition-colors hover:bg-ink/5 hover:text-ink"
+              className="hidden rounded-full px-3 py-1.5 text-sm text-ink-soft transition-colors hover:bg-ink/5 hover:text-ink sm:inline-block"
             >
               {link.label}
             </a>
           ))}
+          <a
+            href={`${import.meta.env.BASE_URL}Adam-Mrotek-CV.pdf`}
+            download
+            className="ml-1 rounded-full border border-hairline bg-surface px-3.5 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
+          >
+            CV
+          </a>
         </nav>
       </div>
     </header>

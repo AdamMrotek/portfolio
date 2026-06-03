@@ -9,6 +9,11 @@ const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/adam-mrotek/" },
 ];
 
+// Lightly assembled at runtime so naive scrapers don't lift it from the markup.
+const emailUser = "adam.mrotek";
+const emailDomain = "gmail.com";
+const email = `${emailUser}@${emailDomain}`;
+
 export function Contact() {
   return (
     <section className="bg-surface px-6 py-24 sm:py-32">
@@ -18,10 +23,20 @@ export function Contact() {
             eyebrow="Get in touch"
             eyebrowId="contact"
             title="Let's build something"
-            description="Have a project in mind, or just want to talk shop about React, AI pipelines, or shipping products? Drop me a line."
+            description="Open to Full-stack & AI engineering roles. Prefer email? Reach me directly — or use the form and I'll get back to you."
           />
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10">
+            <a
+              href={`mailto:${email}`}
+              className="inline-flex items-center gap-2 text-lg font-medium text-ink transition-colors hover:text-accent"
+            >
+              <MailIcon />
+              {email}
+            </a>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-3">
             {socials.map((social) => (
               <a
                 key={social.label}
@@ -85,5 +100,23 @@ export function Contact() {
         </Reveal>
       </div>
     </section>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 20 20"
+      fill="none"
+      className="h-5 w-5 text-accent"
+      stroke="currentColor"
+      strokeWidth={1.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="2.5" y="4" width="15" height="12" rx="2" />
+      <path d="m3 5 7 6 7-6" />
+    </svg>
   );
 }
