@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, "SF Pro Display", "SF Pro Text", "Inter",
+    "Helvetica Neue", system-ui, sans-serif;
+
+  /* Apple-like palette: near-black ink on off-white, single blue accent */
+  --color-ink: #1d1d1f;
+  --color-ink-soft: #424245;
+  --color-muted: #6e6e73;
+  --color-hairline: #d2d2d7;
+  --color-canvas: #fbfbfd;
+  --color-surface: #ffffff;
+  --color-accent: #0071e3;
+  --color-accent-hover: #0077ed;
+
+  --radius-card: 1.75rem;
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 40px rgba(0, 0, 0, 0.06);
+  --shadow-lift: 0 2px 6px rgba(0, 0, 0, 0.06), 0 24px 60px rgba(0, 0, 0, 0.1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* offset anchored sections below the sticky nav */
+    scroll-padding-top: 5.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  }
+}
+
+@layer utilities {
+  /* Scroll-reveal: hidden until .is-visible is toggled by IntersectionObserver */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
