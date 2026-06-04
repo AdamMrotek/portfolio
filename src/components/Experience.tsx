@@ -196,9 +196,14 @@ export function Experience() {
                   ) : (
                     <p className="font-medium text-ink">{cert.name}</p>
                   )}
-                  <p className="text-sm font-medium text-muted">
-                    {cert.issuer}
-                  </p>
+                  <div className="text-right">
+                    <p className="text-sm font-medium text-muted">
+                      {cert.issuer}
+                    </p>
+                    {cert.date && (
+                      <p className="text-xs text-muted">{cert.date}</p>
+                    )}
+                  </div>
                 </div>
                 {cert.summary && (
                   <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">

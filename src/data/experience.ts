@@ -22,7 +22,7 @@ export const facts = {
 };
 
 export const positioning =
-  "Full-stack engineer with a frontend lean and 4 years of commercial experience shipping product-grade web apps in London. Strongest in TypeScript, Vue 3 and React, with hands-on backend work in Python (FastAPI) and an active focus on AI-aided developer tooling and applied LLM product engineering.";
+  "Full-stack engineer with 4 years of commercial experience specialising in type-safe UI architectures (TypeScript, Vue 3, React) and robust backend services (Python, FastAPI). Actively focused on applied LLM product engineering — building production-ready autonomous tooling and owning features from technical roadmap through to containerized delivery.";
 
 export const experience: ExperienceEntry[] = [
   {
@@ -30,10 +30,10 @@ export const experience: ExperienceEntry[] = [
     role: "Front-end Engineer",
     company: "Croud",
     logo: "croud_logo.jpeg",
-    period: "Jul 2023 – Present",
+    period: "Jul 2023 – Mar 2026",
     location: "London · Hybrid",
     summary:
-      "Part of a three-person frontend team building Croud's marketing-platform suite, with day-to-day scope spanning the full stack — Vue 3 / TypeScript / Shadcn on the frontend and FastAPI on the backend — plus a parallel investment in AI-aided developer tooling. Took solo ownership of features and entire internal products, from roadmap and scoping through build and delivery, alongside high-stakes client-facing platform work.",
+      "Part of a three-person frontend team that built Croud's marketing-platform suite, with day-to-day scope spanning the full stack — Vue 3 / TypeScript / Shadcn on the frontend and FastAPI on the backend — plus a parallel investment in AI-aided developer tooling. Took solo ownership of features and entire internal products, from roadmap and scoping through build and delivery, alongside high-stakes client-facing platform work.",
     sections: [
       {
         label: "Selected work",
@@ -44,15 +44,15 @@ export const experience: ExperienceEntry[] = [
           },
           {
             lead: "Creator Platform — influencer-marketing build.",
-            text: "Delivered the internal alternative to a multi-million-pound external agency proposal. Owned the pixel-perfect responsive frontend (Shadcn) against demanding Figma specs — using the Figma MCP to drive faithful Figma-to-code — and authored the supporting API endpoints end-to-end, keeping a major client opportunity in-house.",
+            text: "Delivered the internal alternative to a multi-million-pound external agency proposal, built in-house by a five-engineer team. Owned the pixel-perfect responsive frontend (Shadcn) against demanding Figma specs — using the Figma MCP to drive faithful Figma-to-code — and authored the supporting FastAPI endpoints end-to-end, keeping a major client opportunity in-house.",
           },
           {
             lead: "Internal tool interface — frontend, end to end.",
             text: "Built the interface for an internal tool used by agency teams, owning it from roadmap through to full delivery — drafting the product roadmap, running clarifications with stakeholders, and designing and shipping the frontend without a formal PM.",
           },
           {
-            lead: "Taxonomy Tool — full vertical, full-stack.",
-            text: "Built both the backend (FastAPI) and the frontend for an internal tool, clearing a feature that had stalled on backend resourcing — schema-touching API work through to the production UI.",
+            lead: "Taxonomy Tool — marketing-tag alignment.",
+            text: "Built the frontend (plus supporting backend tweaks) for an internal app that aligns marketing tags across teams — projected to save ~£100k/month (pre-build estimate) by removing tagging inconsistency.",
           },
         ],
       },
@@ -108,7 +108,7 @@ export const experience: ExperienceEntry[] = [
         ],
       },
     ],
-    stack: "JavaScript · React · Vue · Vuex · Nuxt · Fabric.js · Canvas API · Python · GCP",
+    stack: "JavaScript · React · Vue · Vuex · Nuxt · Fabric.js · Canvas API · Python · GCP · GitHub Actions",
   },
   {
     id: "bryden-wood",
@@ -134,6 +134,7 @@ export type EducationEntry = {
 export type Certification = {
   name: string;
   issuer: string;
+  date?: string;
   summary?: string;
   skills?: string[];
   url?: string;
@@ -142,7 +143,8 @@ export type Certification = {
 export const certifications: Certification[] = [
   {
     name: "Claude with Amazon Bedrock",
-    issuer: "Anthropic",
+    issuer: "Anthropic · AWS",
+    date: "Issued May 2026",
     summary:
       "Building production-ready AI applications with Claude on Amazon Bedrock — the Bedrock API, prompt engineering and evaluations, tool use, retrieval-augmented generation (RAG), the Model Context Protocol (MCP), and agents.",
     skills: [

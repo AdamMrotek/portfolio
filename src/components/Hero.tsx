@@ -28,9 +28,9 @@ export function Hero() {
           Adam Mrotek
         </h1>
         <p className="reveal is-visible mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          I build typed, production-grade web and AI products end to end — from
-          React and Vue front ends to Python (FastAPI) services and the applied-LLM
-          layer in between.
+          I build production-grade web and AI products end to end — type-safe
+          Vue 3 and React front ends, Python (FastAPI) services, and the
+          applied-LLM layer in between.
         </p>
         <div className="reveal is-visible mt-10 flex flex-wrap items-center justify-center gap-3">
           <a
