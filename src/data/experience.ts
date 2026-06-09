@@ -27,7 +27,7 @@ export const positioning =
 export const experience: ExperienceEntry[] = [
   {
     id: "croud",
-    role: "Front-end Engineer",
+    role: "Software Developer",
     company: "Croud",
     logo: "croud_logo.jpeg",
     period: "Jul 2023 – Mar 2026",
