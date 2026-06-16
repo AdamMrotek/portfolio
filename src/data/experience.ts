@@ -27,13 +27,13 @@ export const positioning =
 export const experience: ExperienceEntry[] = [
   {
     id: "croud",
-    role: "Software Developer",
+    role: "Full-Stack Engineer",
     company: "Croud",
     logo: "croud_logo.jpeg",
     period: "Jul 2023 – Mar 2026",
     location: "London · Hybrid",
     summary:
-      "Part of a three-person frontend team that built Croud's marketing-platform suite, with day-to-day scope spanning the full stack — Vue 3 / TypeScript / Shadcn on the frontend and FastAPI on the backend — plus a parallel investment in AI-aided developer tooling. Took solo ownership of features and entire internal products, from roadmap and scoping through build and delivery, alongside high-stakes client-facing platform work.",
+      "Full-stack delivery across Croud's marketing-platform suite — owning front-end features and supporting FastAPI endpoints, co-owning the Vue 3 / React + Tailwind + Storybook design system, and migrating legacy Nuxt surfaces to type-safe patterns. Took solo ownership of features and entire internal products from spec through to production, alongside high-stakes client-facing platform work and a parallel investment in AI-aided developer tooling.",
     sections: [
       {
         label: "Selected work",

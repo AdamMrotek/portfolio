@@ -40,7 +40,7 @@ export function Hero() {
             View my work
           </a>
           <a
-            href={`${import.meta.env.BASE_URL}Adam-Mrotek-CV.pdf`}
+            href={`${import.meta.env.BASE_URL}Adam_Mrotek_CV_2026.pdf`}
             download
             className="rounded-full border border-hairline bg-surface px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
           >
