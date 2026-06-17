@@ -6,8 +6,11 @@ import { Stack } from "./components/Stack";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { useScrollSnap } from "./hooks/useScrollSnap";
 
 export default function App() {
+  useScrollSnap();
+
   return (
     <>
       <Nav />

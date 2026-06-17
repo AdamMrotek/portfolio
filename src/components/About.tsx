@@ -3,7 +3,7 @@ import { SectionHeader } from "./Section";
 
 export function About() {
   return (
-    <section className="px-6 py-24 sm:py-32">
+    <section className="snap-section px-6 py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
         <Reveal>
           <SectionHeader eyebrow="Who I am" eyebrowId="about" title="About" />

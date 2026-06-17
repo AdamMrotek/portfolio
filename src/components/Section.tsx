@@ -50,6 +50,8 @@ type SectionProps = SectionHeaderProps & {
   width?: "4xl" | "6xl";
   /** Extra header content rendered under the title block (e.g. a meta list). */
   headerExtra?: ReactNode;
+  /** Make this section a gentle scroll-snap point (snaps to its title). */
+  snap?: boolean;
   children: ReactNode;
 };
 
@@ -66,12 +68,13 @@ export function Section({
   background = "canvas",
   width = "6xl",
   headerExtra,
+  snap = false,
   children,
 }: SectionProps) {
   return (
     <section
       id={id}
-      className={`px-6 py-24 sm:py-32 ${backgroundClass[background]}`}
+      className={`px-6 py-24 sm:py-32 ${backgroundClass[background]}${snap ? " snap-section" : ""}`}
     >
       <div className={`mx-auto ${width === "4xl" ? "max-w-4xl" : "max-w-6xl"}`}>
         <Reveal as="header" className="max-w-2xl">

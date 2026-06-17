@@ -8,7 +8,7 @@ export function FeaturedProject() {
   const [showDemo, setShowDemo] = useState(false);
 
   return (
-    <section className="px-6 pt-10 pb-24 sm:pt-12 sm:pb-32">
+    <section className="snap-section px-6 pt-8 pb-16 sm:pt-10 sm:pb-20">
       <div className="mx-auto max-w-6xl">
         {/* eyebrow + title + description above */}
         <Reveal>
@@ -16,16 +16,16 @@ export function FeaturedProject() {
             <p id="work" className="text-sm font-medium text-accent">
               {featured.eyebrow}
             </p>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
               {featured.name}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-ink-soft">
+            <p className="mt-3 text-base leading-relaxed text-ink-soft">
               {featured.summary}
             </p>
           </div>
         </Reveal>
 
-        <Reveal className="mt-12">
+        <Reveal className="mt-8">
           {showDemo && featured.video ? (
             <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-hairline bg-ink shadow-soft">
               <button
@@ -44,7 +44,7 @@ export function FeaturedProject() {
               />
             </div>
           ) : (
-            <div className="grid items-start gap-10 lg:grid-cols-[1.45fr_1fr] lg:gap-0">
+            <div className="grid items-start gap-8 lg:grid-cols-[1.45fr_1fr] lg:gap-0">
               {/* mockups */}
               <div className="px-2 sm:px-4 lg:pr-12">
                 <ResponsiveShowcase
@@ -57,15 +57,15 @@ export function FeaturedProject() {
               {/* information on the side, behind a vertical divider */}
               <div className="flex flex-col justify-center lg:border-l lg:border-hairline lg:pl-12">
                 {featured.highlights && (
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {featured.highlights.map((point) => (
                       <li
                         key={point}
-                        className="flex gap-3 text-[15px] leading-relaxed text-muted"
+                        className="flex gap-3 text-sm leading-relaxed text-muted"
                       >
                         <span
                           aria-hidden
-                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                          className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
                         />
                         {point}
                       </li>
@@ -73,7 +73,7 @@ export function FeaturedProject() {
                   </ul>
                 )}
 
-                <ul className="mt-7 flex flex-wrap gap-2">
+                <ul className="mt-5 flex flex-wrap gap-2">
                   {featured.tags.map((tag) => (
                     <li
                       key={tag}
@@ -84,12 +84,12 @@ export function FeaturedProject() {
                   ))}
                 </ul>
 
-                <div className="mt-9 flex flex-wrap gap-3">
+                <div className="mt-6 flex flex-wrap gap-3">
                   {featured.video && (
                     <button
                       type="button"
                       onClick={() => setShowDemo(true)}
-                      className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+                      className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
                     >
                       <PlayIcon />
                       See happy path demo
@@ -100,7 +100,7 @@ export function FeaturedProject() {
                       href={featured.liveUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-full border border-hairline px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
+                      className="rounded-full border border-hairline px-5 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
                     >
                       Live app →
                     </a>
@@ -110,7 +110,7 @@ export function FeaturedProject() {
                       href={featured.pocUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-full border border-hairline px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
+                      className="rounded-full border border-hairline px-5 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
                     >
                       Try the PoC →
                     </a>
@@ -119,7 +119,7 @@ export function FeaturedProject() {
                     href={featured.repoUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-full border border-hairline px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
+                    className="rounded-full border border-hairline px-5 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
                   >
                     View on GitHub →
                   </a>

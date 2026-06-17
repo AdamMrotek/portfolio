@@ -42,6 +42,12 @@
 }
 
 @layer utilities {
+  /* Marker class: JS (useScrollSnap) gently snaps these section tops into view
+     after the user stops scrolling. scroll-margin offsets below the nav. */
+  .snap-section {
+    scroll-margin-top: 5.5rem;
+  }
+
   /* Scroll-reveal: hidden until .is-visible is toggled by IntersectionObserver */
   .reveal {
     opacity: 0;

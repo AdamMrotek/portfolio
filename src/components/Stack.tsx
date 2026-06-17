@@ -10,6 +10,7 @@ export function Stack() {
       title="The stack"
       description="Tools I reach for across the product surface — from typed front ends to Python services and the AI layer in between."
       background="surface"
+      snap
     >
       <div className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
         {stack.map((group) => (
