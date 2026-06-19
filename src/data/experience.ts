@@ -22,7 +22,7 @@ export const facts = {
 };
 
 export const positioning =
-  "Full-stack engineer with 4 years of commercial experience specialising in type-safe UI architectures (TypeScript, Vue 3, React) and robust backend services (Python, FastAPI). Actively focused on applied LLM product engineering — building production-ready autonomous tooling and owning features from technical roadmap through to containerized delivery.";
+  "Full-stack engineer with ~4 years of commercial experience building complex, user-facing web applications end to end. Strong in TypeScript, React and Next.js with a modern front-end toolchain (TanStack Query, shadcn/ui) and hands-on backend in Python / FastAPI. Proven track record of owning delivery from product spec to production, working closely with design, and an active focus on building real products on top of LLMs.";
 
 export const experience: ExperienceEntry[] = [
   {
@@ -33,26 +33,26 @@ export const experience: ExperienceEntry[] = [
     period: "Jul 2023 – Mar 2026",
     location: "London · Hybrid",
     summary:
-      "Full-stack delivery across Croud's marketing-platform suite — owning front-end features and supporting FastAPI endpoints, co-owning the Vue 3 / React + Tailwind + Storybook design system, and migrating legacy Nuxt surfaces to type-safe patterns. Took solo ownership of features and entire internal products from spec through to production, alongside high-stakes client-facing platform work and a parallel investment in AI-aided developer tooling.",
+      "Full-stack delivery across Croud's marketing-automation suite — owning front-end features and supporting FastAPI endpoints, co-architecting the TypeScript component design system (React + Tailwind + shadcn/ui + Storybook), and modernising legacy surfaces to type-safe patterns. Took solo ownership of features and entire internal products from spec through to production, alongside high-stakes client-facing platform work and AI tooling that featured in client pitches.",
     sections: [
       {
         label: "Selected work",
         bullets: [
           {
             lead: "Croud Control — core marketing platform (3,000+ users).",
-            text: "Flagship platform across agency and client teams. Operated as feature owner: scoped with product, built and shipped the frontend with full test coverage, and helped move legacy Nuxt screens onto a modern TypeScript (Vue 3) stack.",
+            text: "Owned front-end delivery across a marketing-automation suite serving 3,000+ users. Co-architected the TypeScript component design system (React + Tailwind + shadcn/ui + Storybook) and modernised legacy surfaces to type-safe patterns, accelerating feature delivery across product areas.",
           },
           {
-            lead: "Creator Platform — influencer-marketing build.",
-            text: "Delivered the internal alternative to a multi-million-pound external agency proposal, built in-house by a five-engineer team. Owned the pixel-perfect responsive frontend (Shadcn) against demanding Figma specs — using the Figma MCP to drive faithful Figma-to-code — and authored the supporting FastAPI endpoints end-to-end, keeping a major client opportunity in-house.",
-          },
-          {
-            lead: "Internal tool interface — frontend, end to end.",
-            text: "Built the interface for an internal tool used by agency teams, owning it from roadmap through to full delivery — drafting the product roadmap, running clarifications with stakeholders, and designing and shipping the frontend without a formal PM.",
+            lead: "Social Influencer Platform — in-house build.",
+            text: "Technical owner of key React (TanStack Query + shadcn/ui) front-end features and their supporting FastAPI backend for an influencer-marketing platform — an internal build that replaced a multi-million-pound third-party agency quote — delivering user-facing surfaces and API data modelling against strict Figma specs.",
           },
           {
             lead: "Taxonomy Tool — marketing-tag alignment.",
-            text: "Built the frontend (plus supporting backend tweaks) for an internal app that aligns marketing tags across teams — projected to save ~£100k/month (pre-build estimate) by removing tagging inconsistency.",
+            text: "Built an internal tag-alignment app (front-end plus supporting backend) projected to save ~£100k/month by removing cross-team tagging inconsistency and cleaning data for downstream analytics.",
+          },
+          {
+            lead: "AI Tooling — client pitches & DevEx.",
+            text: "Built the front-end apps that showcased internal AI tools and agentic pipelines in client pitches, and shipped a custom Claude sub-agent that converts Figma designs directly into the codebase — driving cross-team adoption and supporting new-business upsell.",
           },
         ],
       },
@@ -61,7 +61,7 @@ export const experience: ExperienceEntry[] = [
         bullets: [
           {
             lead: "Platform modernization:",
-            text: "multi-year migration of legacy Nuxt platforms onto Vue 3 + Shadcn + Tailwind, focused on reusable component libraries that lift team-wide velocity.",
+            text: "migration of legacy surfaces onto type-safe React + shadcn/ui + Tailwind, focused on reusable component libraries that lift team-wide velocity.",
           },
           {
             lead: "AI-aided developer tooling (DevEx):",
@@ -73,13 +73,13 @@ export const experience: ExperienceEntry[] = [
           },
           {
             lead: "Design partnership:",
-            text: "close Figma-to-code collaboration with UX, including the Creator Platform where pixel-perfect fidelity was a contractual quality bar.",
+            text: "close Figma-to-code collaboration with UX, including the Social Influencer Platform where pixel-perfect fidelity was a contractual quality bar.",
           },
         ],
       },
     ],
     stack:
-      "Vue 3 · TypeScript · Shadcn · Tailwind · Nuxt · FastAPI · Python · Docker · Claude / MCP · Figma · Vitest · Playwright · Storybook",
+      "React · TypeScript · Next.js · TanStack Query · shadcn/ui · Tailwind · Vue 3 · FastAPI · Python · Docker · Claude / MCP · Figma · Storybook",
   },
   {
     id: "hullabalook",
@@ -105,6 +105,9 @@ export const experience: ExperienceEntry[] = [
           {
             text: "Improved Lighthouse / SEO scores to enhance overall app performance.",
           },
+          {
+            text: "Mentored junior engineers through code reviews and pairing sessions, helping raise code quality and shorten onboarding.",
+          },
         ],
       },
     ],
@@ -115,11 +118,11 @@ export const experience: ExperienceEntry[] = [
     role: "Architectural Assistant (Part I & II)",
     company: "Bryden Wood",
     logo: "brydenwoodtechnology_logo.jpeg",
-    period: "2015–2016 · 2018–2021",
+    period: "Mar 2018 – Sep 2021",
     location: "London",
     kind: "pre",
     summary:
-      "Pre-software career in architecture — relevant as a systems-thinking and platform-design narrative: parametric design, BIM, and reasoning about large, interdependent systems.",
+      "Pre-software career in architecture — designed and contributed to projects for airports and data centers, applying platform-based, systems-thinking design principles. Relevant as the origin of how I reason about large, interdependent systems.",
     stack: "BIM · Revit · AutoCAD · Parametric design · Adobe Creative Suite",
   },
 ];
@@ -143,7 +146,7 @@ export type Certification = {
 export const certifications: Certification[] = [
   {
     name: "Claude with Amazon Bedrock",
-    issuer: "Anthropic · AWS",
+    issuer: "Anthropic Academy · AWS",
     date: "Issued May 2026",
     summary:
       "Building production-ready AI applications with Claude on Amazon Bedrock — the Bedrock API, prompt engineering and evaluations, tool use, retrieval-augmented generation (RAG), the Model Context Protocol (MCP), and agents.",

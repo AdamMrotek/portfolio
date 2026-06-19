@@ -16,11 +16,11 @@ export function About() {
             </p>
             <p>
               Over the last four years in London I&apos;ve shipped product-grade
-              web apps end to end — Vue 3 and React front ends, Python back ends
-              (FastAPI), and the AI-aided tooling around them. I care about
-              engineering discipline: typed contracts, automated QA (Vitest,
-              Playwright, Storybook), and eval-driven development for anything
-              touching an LLM.
+              web apps end to end — React and Next.js front ends (TanStack Query,
+              shadcn/ui), Python back ends (FastAPI), and the AI-aided tooling
+              around them. I care about engineering discipline: typed contracts,
+              automated QA (Vitest, Playwright, Storybook), and eval-driven
+              development for anything touching an LLM.
             </p>
             <p>
               Being a father taught me dedication and focus under real
