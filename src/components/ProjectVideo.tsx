@@ -6,6 +6,8 @@ type ProjectVideoProps = {
   poster?: string;
   label: string;
   className?: string;
+  /** Show native playback controls (timeline, play/pause, etc.). */
+  controls?: boolean;
 };
 
 /**
@@ -18,6 +20,7 @@ export function ProjectVideo({
   poster,
   label,
   className = "",
+  controls = false,
 }: ProjectVideoProps) {
   const [failed, setFailed] = useState(false);
 
@@ -47,6 +50,7 @@ export function ProjectVideo({
       loop
       muted
       playsInline
+      controls={controls}
       preload="metadata"
       aria-label={`${label} overview`}
       onError={() => setFailed(true)}

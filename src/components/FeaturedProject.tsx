@@ -27,7 +27,7 @@ export function FeaturedProject() {
 
         <Reveal className="mt-8">
           {showDemo && featured.video ? (
-            <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-hairline bg-ink shadow-soft">
+            <div className="relative mx-auto w-full max-w-[1000px] overflow-hidden rounded-[var(--radius-card)] border border-hairline bg-ink shadow-soft">
               <button
                 type="button"
                 onClick={() => setShowDemo(false)}
@@ -40,6 +40,7 @@ export function FeaturedProject() {
                 src={featured.video}
                 poster={featured.videoPoster ?? featured.image}
                 label={featured.name}
+                controls
                 className="aspect-[1920/1162] object-contain"
               />
             </div>
