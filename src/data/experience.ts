@@ -26,6 +26,17 @@ export const positioning =
 
 export const experience: ExperienceEntry[] = [
   {
+    id: "villageos",
+    role: "Founder & Full-Stack Engineer",
+    company: "VillageOS",
+    period: "Apr 2026 – Present",
+    location: "Self-employed · Remote · villageos.co.uk",
+    summary:
+      "Building and operating VillageOS solo — a live AI product turning scattered parent communication into schema-valid calendar events. Owned every layer end-to-end. Full write-up in the featured project above.",
+    stack:
+      "Next.js · React · TypeScript · TanStack Query · shadcn/ui · FastAPI · Pydantic · AWS Lambda · SAM · Supabase · OpenAI · Groq · PostHog · GitHub Actions",
+  },
+  {
     id: "croud",
     role: "Full-Stack Engineer",
     company: "Croud",

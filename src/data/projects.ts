@@ -31,7 +31,7 @@ export const featured: Project = {
   summary:
     "An AI-powered family OS that turns scattered parent communication — WhatsApp threads, PDF newsletters, photos of flyers — into schema-valid calendar events with action items. Built and deployed solo: frontend, backend, data, infrastructure, CI/CD and LLM evals.",
   highlights: [
-    "Typed end-to-end — one shared Pydantic ↔ TypeScript contract, no schema drift.",
+    "Typed on both sides — Pydantic v2 is the single source of truth for the LLM extraction and FastAPI validation; the TypeScript client mirrors the same shapes, enforcing the contract at the API edge.",
     "Structured AI, not vibes — strict-schema extraction over text + vision, tracked by a golden-dataset eval harness.",
     "Real infra — FastAPI on AWS Lambda, Supabase auth + RLS, with a live PostHog A/B on the extraction model.",
   ],
