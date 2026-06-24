@@ -22,7 +22,7 @@ export const facts = {
 };
 
 export const positioning =
-  "Full-stack engineer with ~4 years of commercial experience building complex, user-facing web applications end to end. Strong in TypeScript, React and Next.js with a modern front-end toolchain (TanStack Query, shadcn/ui) and hands-on backend in Python / FastAPI. Proven track record of owning delivery from product spec to production, working closely with design, and an active focus on building real products on top of LLMs.";
+  "Senior software engineer with 4+ years of commercial experience leading front-end delivery on complex web applications and owning them end to end — from TypeScript design systems and type-safe patterns to hands-on Python / FastAPI backends. Strong in React and Next.js with a modern front-end toolchain (TanStack Query, shadcn/ui), and currently building a production AI product on top of LLMs.";
 
 export const experience: ExperienceEntry[] = [
   {
@@ -44,7 +44,7 @@ export const experience: ExperienceEntry[] = [
     period: "Jul 2023 – Mar 2026",
     location: "London · Hybrid",
     summary:
-      "Full-stack delivery across Croud's marketing-automation suite — owning front-end features and supporting FastAPI endpoints, co-architecting the TypeScript component design system (React + Tailwind + shadcn/ui + Storybook), and modernising legacy surfaces to type-safe patterns. Took solo ownership of features and entire internal products from spec through to production, alongside high-stakes client-facing platform work and AI tooling that featured in client pitches.",
+      "Led front-end delivery across Croud's marketing-automation suite — owning front-end features and supporting FastAPI endpoints, co-architecting the TypeScript component design system (React + Tailwind + shadcn/ui + Storybook), and modernising legacy surfaces to type-safe patterns. Took solo ownership of features and entire internal products from spec through to production, alongside high-stakes client-facing platform work and AI tooling that featured in client pitches.",
     sections: [
       {
         label: "Selected work",
@@ -55,7 +55,7 @@ export const experience: ExperienceEntry[] = [
           },
           {
             lead: "Social Influencer Platform — in-house build.",
-            text: "Technical owner of key React (TanStack Query + shadcn/ui) front-end features and their supporting FastAPI backend for an influencer-marketing platform — an internal build that replaced a multi-million-pound third-party agency quote — delivering user-facing surfaces and API data modelling against strict Figma specs.",
+            text: "Early engineer on an in-house influencer-marketing platform — an internal build that replaced a £17M third-party agency quote. Built user profiles, dashboards and registration-of-interest flows against strict Figma specs, integrating with the FastAPI backend, and set up a Figma-to-code pipeline.",
           },
           {
             lead: "Taxonomy Tool — marketing-tag alignment.",
