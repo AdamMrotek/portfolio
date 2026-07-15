@@ -4,6 +4,9 @@ import { SectionHeader } from "./Section";
 const FORM_ENDPOINT =
   "https://formsubmit.co/52d56433f5bb53e85ac809fc8a6e6041";
 
+// Where formsubmit.co sends the visitor after a successful submission.
+const FORM_REDIRECT = "https://adammrotek.github.io/portfolio/?sent=true#contact";
+
 const socials = [
   { label: "GitHub", href: "https://github.com/AdamMrotek" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/adam-mrotek/" },
@@ -15,6 +18,10 @@ const emailDomain = "gmail.com";
 const email = `${emailUser}@${emailDomain}`;
 
 export function Contact() {
+  const wasSent =
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("sent") === "true";
+
   return (
     <section className="bg-surface px-6 py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-2">
@@ -57,6 +64,13 @@ export function Contact() {
             method="POST"
             className="flex flex-col gap-4 rounded-[var(--radius-card)] border border-hairline bg-canvas p-7 shadow-soft sm:p-8"
           >
+            <input type="hidden" name="_next" value={FORM_REDIRECT} />
+
+            {wasSent && (
+              <p className="rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm font-medium text-ink">
+                Thanks — your message was sent. I'll get back to you soon.
+              </p>
+            )}
             <label className="flex flex-col gap-2 text-sm font-medium text-ink-soft">
               Name
               <input
