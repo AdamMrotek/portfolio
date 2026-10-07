@@ -10,6 +10,9 @@ export type Project = {
   desktopImage?: string;
   /** Mobile screenshot for the responsive showcase. */
   mobileImage?: string;
+  /** Width / height of the screenshots, so the showcase frames match them. */
+  desktopAspect?: number;
+  mobileAspect?: number;
   /** Optional looping demo clip, revealed in place of the card on request. */
   video?: string;
   /** Optional still frame shown before the demo clip starts playing. */
@@ -17,7 +20,7 @@ export type Project = {
   liveUrl?: string;
   /** Optional proof-of-concept / prototype deployment, shown alongside the live link. */
   pocUrl?: string;
-  repoUrl: string;
+  repoUrl?: string;
 };
 
 // Vite serves /public at the base URL; build the path with BASE_URL so it
@@ -59,7 +62,54 @@ export const featured: Project = {
   repoUrl: "https://github.com/AdamMrotek/VillageOS",
 };
 
+/** Additional AI projects, shown beneath the featured one. */
+export const aiProjects: Project[] = [
+  {
+    id: "metafora",
+    eyebrow: "AI project · Voice agent",
+    name: "Metafora",
+    summary:
+      "Clinical voice intake: a patient opens a link and talks to an AI interviewer; the clinician gets a structured, signed intake record with red flags escalated live. A portfolio deployment on synthetic data, not a compliant clinical system.",
+    highlights: [
+      "Two-layer safety — predefined red-flag phrases are matched before the LLM sees anything, with model escalation as a second detector; flags are pushed to the clinician dashboard live over SSE.",
+      "Single-pass turn for low latency — the spoken reply travels inside the update_intake tool call and is released once the record is written, so the call can't end mid-question.",
+      "Pydantic models generate the TypeScript types, and the auth module is shared across services.",
+    ],
+    tags: [
+      "Python",
+      "FastAPI",
+      "Pipecat",
+      "LiveKit",
+      "Groq",
+      "Postgres",
+      "Supabase",
+      "React",
+      "TypeScript",
+      "Fly.io",
+      "Playwright",
+    ],
+    desktopImage: asset("Patien_View.webp"),
+    mobileImage: asset("Moblie_conversation.webp"),
+    desktopAspect: 2730 / 1530,
+    mobileAspect: 744 / 1390,
+    liveUrl: "https://metafora-call.vercel.app/",
+    repoUrl: "https://github.com/AdamMrotek/Metafora",
+  },
+];
+
 export const projects: Project[] = [
+  {
+    id: "showroom",
+    eyebrow: "AI tool · In real use",
+    name: "Showroom",
+    summary:
+      "A standardised light touch-up for amateur real-estate photos: straighten the frame, brighten the room, remove clutter, improve the window view — with a consistent look across a listing. Includes a browser-only converter and size optimiser. Built quickly for my dad's estate-agent work, where it replaced a paid subscription. One user, hardcoded login.",
+    tags: ["Next.js", "React", "TypeScript", "OpenAI", "Tailwind"],
+    desktopImage: asset("Real-estate-touchup app.webp"),
+    mobileImage: asset("Real-estate-touchap-conversion.webp"),
+    desktopAspect: 2378 / 1550,
+    mobileAspect: 718 / 1384,
+  },
   {
     id: "broccoli",
     eyebrow: "Web app",

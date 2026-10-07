@@ -9,9 +9,11 @@ import {
 import { projects } from "../data/projects";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
+import { ResponsiveShowcase } from "./ResponsiveShowcase";
 
 // The one side project worth naming; everything else lives on the profile.
 const broccoli = projects.find((project) => project.id === "broccoli");
+const showroom = projects.find((project) => project.id === "showroom");
 import { useScrollProgress } from "../hooks/useScrollProgress";
 import { usePassedAnchor } from "../hooks/usePassedAnchor";
 
@@ -256,11 +258,45 @@ export function Experience() {
           <h3 className="text-2xl font-semibold tracking-tight text-ink">
             Side projects
           </h3>
+          {showroom && (
+            <div className="mt-6 grid items-center gap-8 rounded-[var(--radius-card)] border border-hairline bg-canvas p-6 sm:p-8 lg:grid-cols-[1.1fr_1fr] lg:gap-12">
+              <div className="px-2 pb-6 sm:px-4">
+                <ResponsiveShowcase
+                  desktopSrc={showroom.desktopImage ?? ""}
+                  mobileSrc={showroom.mobileImage ?? ""}
+                  label={showroom.name}
+                  desktopAspect={showroom.desktopAspect}
+                  mobileAspect={showroom.mobileAspect}
+                />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-accent">
+                  {showroom.eyebrow}
+                </p>
+                <h4 className="mt-2 text-xl font-semibold tracking-tight text-ink">
+                  {showroom.name}
+                </h4>
+                <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
+                  {showroom.summary}
+                </p>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {showroom.tags.map((tag) => (
+                    <li
+                      key={tag}
+                      className="rounded-full border border-hairline bg-surface px-3 py-1 text-xs font-medium text-ink-soft"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
           <a
             href="https://github.com/AdamMrotek"
             target="_blank"
             rel="noreferrer"
-            className="mt-6 flex flex-col items-start rounded-[var(--radius-card)] border border-hairline bg-canvas p-6 transition-colors hover:border-accent/40"
+            className="mt-4 flex flex-col items-start rounded-[var(--radius-card)] border border-hairline bg-canvas p-6 transition-colors hover:border-accent/40"
           >
             <p className="text-[15px] leading-relaxed text-ink-soft">
               {broccoli && (
