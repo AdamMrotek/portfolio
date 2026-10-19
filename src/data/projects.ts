@@ -57,7 +57,7 @@ export const featured: Project = {
   mobileImage: asset("villageos-mobile.png"),
   video: asset("happy-path-fullres.mp4"),
   videoPoster: asset("happy-path-poster.jpg"),
-  liveUrl: "https://www.villageos.co.uk/events",
+  liveUrl: "https://www.villageos.co.uk",
   pocUrl: "https://village-os-poc.vercel.app/create_event",
   repoUrl: "https://github.com/AdamMrotek/VillageOS",
 };
