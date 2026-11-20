@@ -1,30 +1,27 @@
 import { useEffect } from "react";
+import { cardStaticTop, getCards } from "../lib/deck";
 
 /**
- * Gentle, smooth scroll snapping for `.snap-section` elements.
+ * Gentle, smooth snapping for the section-stack deck.
  *
  * Unlike CSS `scroll-snap-type`, this never fights an in-progress scroll:
- * it waits until the user *stops* scrolling, and only then — if a section is
- * already close to its resting place — eases it the rest of the way with a
- * slow, hand-rolled animation. Sections far from a snap point (e.g. mid-read
- * on a tall one) are left alone, so it feels like a soft nudge.
+ * it waits until the user *stops* scrolling, and only then — if a card is
+ * already close to fully covering the one beneath it — eases it the rest of
+ * the way, so you never rest on a half-stacked pair. Cards far from a snap
+ * point (e.g. mid-read on a tall one) are left alone.
  *
- * It aligns each section's *content* top (i.e. past its top padding, where the
- * title lives) to the nav line, so padded sections snap with the heading under
- * the nav rather than with a band of empty space above it.
- *
- * @param offset  Where section content tops should rest, in px from the
- *                viewport top (matches the sticky nav + scroll-padding-top).
+ * Positions come from the deck's static layout, because stuck sticky cards
+ * report where they're stuck, not where they live.
  */
-export function useScrollSnap(offset = 88) {
+export function useScrollSnap() {
   useEffect(() => {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
     if (reduceMotion) return;
 
-    // Only nudge when a section's content top is already within this many px
-    // of its resting line — the "magnet" range.
+    // Only nudge when a card's top is already within this many px of the
+    // viewport top — the "magnet" range.
     const THRESHOLD = 140;
     // Below this we're effectively aligned; don't bother scrolling.
     const DEAD_ZONE = 2;
@@ -52,7 +49,7 @@ export function useScrollSnap(offset = 88) {
 
       const step = (now: number) => {
         const t = Math.min((now - startTime) / DURATION, 1);
-        window.scrollTo(0, start + change * easeInOutCubic(t));
+        window.scrollTo({ top: start + change * easeInOutCubic(t), behavior: "instant" });
         if (t < 1) {
           rafId = requestAnimationFrame(step);
         } else {
@@ -62,23 +59,18 @@ export function useScrollSnap(offset = 88) {
       rafId = requestAnimationFrame(step);
     };
 
-    // Distance from the section's content top (past padding) to its rest line.
-    const contentOffset = (el: HTMLElement) => {
-      const padTop = parseFloat(getComputedStyle(el).paddingTop) || 0;
-      return el.getBoundingClientRect().top + padTop - offset;
-    };
-
     const snapToNearest = () => {
       if (animating) return;
 
-      const sections =
-        document.querySelectorAll<HTMLElement>(".snap-section");
+      // The hero is the first card; scrolling a little off it shouldn't
+      // pull you back up.
+      const cards = getCards().slice(1);
       let bestDelta = 0;
       let bestDist = THRESHOLD;
       let found = false;
 
-      for (const el of sections) {
-        const delta = contentOffset(el);
+      for (const card of cards) {
+        const delta = cardStaticTop(card) - window.scrollY;
         const dist = Math.abs(delta);
         if (dist < bestDist) {
           bestDist = dist;
@@ -115,5 +107,5 @@ export function useScrollSnap(offset = 88) {
       window.clearTimeout(idleTimer);
       stopAnim();
     };
-  }, [offset]);
+  }, []);
 }

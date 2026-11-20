@@ -29,13 +29,9 @@ export function ProjectVideo({
       <div
         aria-label={`${label} overview`}
         role="img"
-        className={`flex items-center justify-center ${className}`}
-        style={{
-          background:
-            "linear-gradient(135deg, #0071e3 0%, #5e5ce6 50%, #1d1d1f 100%)",
-        }}
+        className={`flex items-center justify-center bg-tile ${className}`}
       >
-        <span className="text-3xl font-semibold tracking-tight text-white/95 sm:text-4xl">
+        <span className="font-serif text-3xl text-ink sm:text-4xl">
           {label}
         </span>
       </div>

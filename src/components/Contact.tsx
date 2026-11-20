@@ -1,5 +1,6 @@
-import { Reveal } from "./Reveal";
 import { SectionHeader } from "./Section";
+import { MailIcon } from "./ContactIcons";
+import { email, socials } from "../data/contact";
 
 const FORM_ENDPOINT =
   "https://formsubmit.co/52d56433f5bb53e85ac809fc8a6e6041";
@@ -7,130 +8,100 @@ const FORM_ENDPOINT =
 // Where formsubmit.co sends the visitor after a successful submission.
 const FORM_REDIRECT = "https://adammrotek.github.io/portfolio/?sent=true#contact";
 
-const socials = [
-  { label: "GitHub", href: "https://github.com/AdamMrotek" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/adam-mrotek/" },
-];
-
-// Lightly assembled at runtime so naive scrapers don't lift it from the markup.
-const emailUser = "adam.mrotek";
-const emailDomain = "gmail.com";
-const email = `${emailUser}@${emailDomain}`;
-
 export function Contact() {
   const wasSent =
     typeof window !== "undefined" &&
     new URLSearchParams(window.location.search).get("sent") === "true";
 
   return (
-    <section className="bg-surface px-6 py-24 sm:py-32">
+    <section id="contact" className="bg-surface px-6 py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-2">
-        <Reveal>
+        <div>
           <SectionHeader
-            eyebrow="Get in touch"
-            eyebrowId="contact"
-            title="Let's build something"
-            description="Open to Full-stack & AI engineering roles. Prefer email? Reach me directly — or use the form and I'll get back to you."
+            title="Get in touch"
+            description="I'm open to full-stack and AI engineering roles. Email me directly, or use the form and I'll reply."
           />
 
           <div className="mt-10">
             <a
               href={`mailto:${email}`}
-              className="inline-flex items-center gap-2 text-lg font-medium text-ink transition-colors hover:text-accent"
+              className="inline-flex items-center gap-2 text-[15px] text-ink underline decoration-hairline underline-offset-4 transition-colors hover:decoration-ink"
             >
-              <MailIcon />
+              <MailIcon className="h-4 w-4 text-muted" />
               {email}
             </a>
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-5 flex flex-wrap gap-5">
             {socials.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-hairline px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
+                className="text-[13px] font-medium text-muted transition-colors hover:text-ink"
               >
-                {social.label} →
+                {social.label}
               </a>
             ))}
           </div>
-        </Reveal>
+        </div>
 
-        <Reveal>
+        <div>
           <form
             action={FORM_ENDPOINT}
             method="POST"
-            className="flex flex-col gap-4 rounded-[var(--radius-card)] border border-hairline bg-canvas p-7 shadow-soft sm:p-8"
+            className="flex flex-col gap-5 rounded-[var(--radius-card)] bg-canvas p-6 sm:p-8"
           >
             <input type="hidden" name="_next" value={FORM_REDIRECT} />
 
             {wasSent && (
-              <p className="rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm font-medium text-ink">
-                Thanks — your message was sent. I'll get back to you soon.
+              <p className="rounded-lg bg-tile px-4 py-3 text-[13px] text-ink">
+                Thanks, your message was sent. I'll get back to you soon.
               </p>
             )}
-            <label className="flex flex-col gap-2 text-sm font-medium text-ink-soft">
+            <label className="flex flex-col gap-2 text-xs text-muted">
               Name
               <input
                 type="text"
                 name="name"
                 required
                 placeholder="Your name"
-                className="rounded-xl border border-hairline bg-surface px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-accent"
+                className="rounded-lg border border-hairline bg-surface px-3.5 py-2.5 text-[14px] text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
               />
             </label>
 
-            <label className="flex flex-col gap-2 text-sm font-medium text-ink-soft">
+            <label className="flex flex-col gap-2 text-xs text-muted">
               Email
               <input
                 type="email"
                 name="email"
                 required
                 placeholder="you@example.com"
-                className="rounded-xl border border-hairline bg-surface px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-accent"
+                className="rounded-lg border border-hairline bg-surface px-3.5 py-2.5 text-[14px] text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
               />
             </label>
 
-            <label className="flex flex-col gap-2 text-sm font-medium text-ink-soft">
+            <label className="flex flex-col gap-2 text-xs text-muted">
               Message
               <textarea
                 name="message"
                 required
                 rows={5}
                 placeholder="Tell me about your project…"
-                className="resize-y rounded-xl border border-hairline bg-surface px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-accent"
+                className="resize-y rounded-lg border border-hairline bg-surface px-3.5 py-2.5 text-[14px] text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
               />
             </label>
 
             <button
               type="submit"
-              className="mt-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+              className="mt-1 self-start rounded-full bg-highlight px-5 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-highlight-hover"
             >
-              Send message →
+              Send message
             </button>
           </form>
-        </Reveal>
+        </div>
       </div>
     </section>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg
-      aria-hidden
-      viewBox="0 0 20 20"
-      fill="none"
-      className="h-5 w-5 text-accent"
-      stroke="currentColor"
-      strokeWidth={1.6}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect x="2.5" y="4" width="15" height="12" rx="2" />
-      <path d="m3 5 7 6 7-6" />
-    </svg>
   );
 }

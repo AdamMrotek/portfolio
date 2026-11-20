@@ -17,53 +17,42 @@ export type ExperienceEntry = {
 };
 
 export const facts = {
-  location: "United Kingdom · Hybrid / Remote",
+  location: "United Kingdom, hybrid or remote",
   linkedin: "https://www.linkedin.com/in/adam-mrotek",
 };
 
 export const positioning =
-  "Senior software engineer with 4+ years of commercial experience leading front-end delivery on complex web applications and owning them end to end — from TypeScript design systems and type-safe patterns to hands-on Python / FastAPI backends. Strong in React and Next.js with a modern front-end toolchain (TanStack Query, shadcn/ui), and currently building a production AI product on top of LLMs.";
+  "Senior software engineer with 4+ years of commercial experience leading front-end delivery on complex web applications, from TypeScript design systems to hands-on Python and FastAPI back ends. I work mostly in React and Next.js with TanStack Query and shadcn/ui, and I'm currently running a live AI product built on LLMs.";
 
 export const experience: ExperienceEntry[] = [
-  {
-    id: "villageos",
-    role: "Founder & Full-Stack Engineer",
-    company: "VillageOS",
-    period: "Apr 2026 – Present",
-    location: "Self-employed · Remote · villageos.co.uk",
-    summary:
-      "Building and operating VillageOS solo — a live AI product turning scattered parent communication into schema-valid calendar events. Owned every layer end-to-end. Full write-up in the featured project above.",
-    stack:
-      "Next.js · React · TypeScript · TanStack Query · shadcn/ui · FastAPI · Pydantic · AWS Lambda · SAM · Supabase · OpenAI · Groq · PostHog · GitHub Actions",
-  },
   {
     id: "croud",
     role: "Full-Stack Engineer",
     company: "Croud",
     logo: "croud_logo.jpeg",
     period: "Jul 2023 – Mar 2026",
-    location: "London · Hybrid",
+    location: "London, hybrid",
     summary:
-      "Led front-end delivery across Croud's marketing-automation suite — owning front-end features and supporting FastAPI endpoints, co-architecting the TypeScript component design system (React + Tailwind + shadcn/ui + Storybook), and modernising legacy surfaces to type-safe patterns. Took solo ownership of features and entire internal products from spec through to production, alongside high-stakes client-facing platform work and AI tooling that featured in client pitches.",
+      "Delivered across Croud's marketing automation and AI tools, used by 3,000+ people. I co-architected the TypeScript design system, took features and whole internal products from spec to production, and built the AI tooling used in client pitches.",
     sections: [
       {
         label: "Selected work",
         bullets: [
           {
-            lead: "Croud Control — core marketing platform (3,000+ users).",
-            text: "Owned front-end delivery across a marketing-automation suite serving 3,000+ users. Co-architected the TypeScript component design system (React + Tailwind + shadcn/ui + Storybook) and modernised legacy surfaces to type-safe patterns, accelerating feature delivery across product areas.",
+            lead: "Croud Control, the core marketing platform.",
+            text: "Owned front-end delivery for the main product. Co-architected the TypeScript component design system (React, Tailwind, shadcn/ui, Storybook) and moved legacy screens to type-safe patterns, which sped up feature work across product areas.",
           },
           {
-            lead: "Social Influencer Platform — in-house build.",
-            text: "Early engineer on an in-house influencer-marketing platform — an internal build that replaced a £17M third-party agency quote. Built user profiles, dashboards and registration-of-interest flows against strict Figma specs, integrating with the FastAPI backend, and set up a Figma-to-code pipeline.",
+            lead: "Social Influencer Platform.",
+            text: "Early engineer on an in-house influencer-marketing platform that replaced a £17M quote from an outside agency. Built user profiles, dashboards and registration-of-interest flows to strict Figma specs against the FastAPI back end, and set up a Figma-to-code pipeline.",
           },
           {
-            lead: "Taxonomy Tool — marketing-tag alignment.",
-            text: "Built an internal tag-alignment app (front-end plus supporting backend) projected to save ~£100k/month by removing cross-team tagging inconsistency and cleaning data for downstream analytics.",
+            lead: "Taxonomy Tool.",
+            text: "Built an internal app for aligning marketing tags, front end and supporting back end. It was projected to save about £100k a month by removing tagging inconsistencies between teams and cleaning data for analytics.",
           },
           {
-            lead: "AI Tooling — client pitches & DevEx.",
-            text: "Built the front-end apps that showcased internal AI tools and agentic pipelines in client pitches, and shipped a custom Claude sub-agent that converts Figma designs directly into the codebase — driving cross-team adoption and supporting new-business upsell.",
+            lead: "AI tooling.",
+            text: "Built the front-end apps that demoed internal AI tools and agent pipelines in client pitches, and shipped a Claude sub-agent that turns Figma designs into code in our codebase. Other teams adopted it, and it helped win new business.",
           },
         ],
       },
@@ -71,26 +60,26 @@ export const experience: ExperienceEntry[] = [
         label: "Cross-cutting practice",
         bullets: [
           {
-            lead: "Platform modernization:",
-            text: "migration of legacy surfaces onto type-safe React + shadcn/ui + Tailwind, focused on reusable component libraries that lift team-wide velocity.",
+            lead: "Platform modernisation:",
+            text: "moved legacy screens onto type-safe React, shadcn/ui and Tailwind, with reusable component libraries the whole team builds on.",
           },
           {
-            lead: "AI-aided developer tooling (DevEx):",
-            text: "engineered internal Claude / MCP “skills” and sub-agents to automate repetitive coding tasks and enforce code-quality standards across the codebase.",
+            lead: "Developer tooling:",
+            text: "built internal Claude and MCP skills and sub-agents that automate repetitive coding tasks and enforce code-quality standards.",
           },
           {
             lead: "Automated QA:",
-            text: "testing across the surface area touched — Vitest (unit), Playwright (E2E), Storybook (component) — inside containerized Docker environments.",
+            text: "unit tests in Vitest, end-to-end tests in Playwright and component tests in Storybook, all run in Docker.",
           },
           {
             lead: "Design partnership:",
-            text: "close Figma-to-code collaboration with UX, including the Social Influencer Platform where pixel-perfect fidelity was a contractual quality bar.",
+            text: "worked closely with UX from Figma to code, including on the Social Influencer Platform, where pixel-perfect fidelity was written into the contract.",
           },
         ],
       },
     ],
     stack:
-      "React · TypeScript · Next.js · TanStack Query · shadcn/ui · Tailwind · Vue 3 · FastAPI · Python · Docker · Claude / MCP · Figma · Storybook",
+      "React, TypeScript, Next.js, TanStack Query, shadcn/ui, Tailwind, Vue 3, FastAPI, Python, Docker, Claude, MCP, Figma, Storybook",
   },
   {
     id: "hullabalook",
@@ -105,16 +94,16 @@ export const experience: ExperienceEntry[] = [
       {
         bullets: [
           {
-            text: "Constructed robust applications with React, Vue, Vuex and Nuxt, plus visual / canvas tooling using Fabric.js and the Canvas API for retail discovery products.",
+            text: "Built applications in React, Vue, Vuex and Nuxt, plus canvas tooling with Fabric.js and the Canvas API for retail discovery products.",
           },
           {
-            text: "Investigated programmatic solutions for unstructured and incomplete datasets using Python, Google Colab and GCP to improve data accuracy.",
+            text: "Cleaned up unstructured and incomplete datasets with Python, Google Colab and GCP to improve data accuracy.",
           },
           {
             text: "Prototyped features that drove successful upsells across multiple clients.",
           },
           {
-            text: "Improved Lighthouse / SEO scores to enhance overall app performance.",
+            text: "Raised Lighthouse and SEO scores.",
           },
           {
             text: "Mentored junior engineers through code reviews and pairing sessions, helping raise code quality and shorten onboarding.",
@@ -122,7 +111,7 @@ export const experience: ExperienceEntry[] = [
         ],
       },
     ],
-    stack: "JavaScript · React · Vue · Vuex · Nuxt · Fabric.js · Canvas API · Python · GCP · GitHub Actions",
+    stack: "JavaScript, React, Vue, Vuex, Nuxt, Fabric.js, Canvas API, Python, GCP, GitHub Actions",
   },
   {
     id: "bryden-wood",
@@ -133,8 +122,8 @@ export const experience: ExperienceEntry[] = [
     location: "London",
     kind: "pre",
     summary:
-      "Pre-software career in architecture — designed and contributed to projects for airports and data centers, applying platform-based, systems-thinking design principles. Relevant as the origin of how I reason about large, interdependent systems.",
-    stack: "BIM · Revit · AutoCAD · Parametric design · Adobe Creative Suite",
+      "My career before software. I worked on airport and data-centre projects using platform-based design, which is where I learned to reason about large, interdependent systems.",
+    stack: "BIM, Revit, AutoCAD, parametric design, Adobe Creative Suite",
   },
 ];
 
@@ -157,10 +146,10 @@ export type Certification = {
 export const certifications: Certification[] = [
   {
     name: "Claude with Amazon Bedrock",
-    issuer: "Anthropic Academy · AWS",
-    date: "Issued May 2026",
+    issuer: "Anthropic Academy and AWS",
+    date: "May 2026",
     summary:
-      "Building production-ready AI applications with Claude on Amazon Bedrock — the Bedrock API, prompt engineering and evaluations, tool use, retrieval-augmented generation (RAG), the Model Context Protocol (MCP), and agents.",
+      "Building AI applications with Claude on Amazon Bedrock: the Bedrock API, prompt engineering and evaluations, tool use, retrieval-augmented generation, the Model Context Protocol and agents.",
     skills: [
       "AWS Bedrock",
       "Claude",
@@ -177,15 +166,10 @@ export const certifications: Certification[] = [
 
 export const education: EducationEntry[] = [
   {
-    qualification: "MSc, Architecture",
+    qualification: "MSc Architecture",
     institution: "Politechnika Poznańska (Poznan University of Technology)",
-    period: "2016–2017",
+    period: "2011–2017",
     note: "Focus: parametric design, BIM",
-  },
-  {
-    qualification: "BArch, Architecture",
-    institution: "Politechnika Poznańska",
-    period: "2011–2015",
   },
   {
     qualification: "Erasmus",

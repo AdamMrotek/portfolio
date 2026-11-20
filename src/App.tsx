@@ -8,14 +8,19 @@ import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { useScrollSnap } from "./hooks/useScrollSnap";
+import { useSectionStack } from "./hooks/useSectionStack";
+import { useDeckNavigation } from "./hooks/useDeckNavigation";
 
 export default function App() {
+  useSectionStack();
+  useDeckNavigation();
   useScrollSnap();
 
   return (
     <>
       <Nav />
-      <main>
+      {/* data-deck: every direct <section> child is a card in the section stack */}
+      <main data-deck>
         <Hero />
         <FeaturedProject />
         <AIProjects />

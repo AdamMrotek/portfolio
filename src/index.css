@@ -1,23 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: -apple-system, "SF Pro Display", "SF Pro Text", "Inter",
-    "Helvetica Neue", system-ui, sans-serif;
+  --font-sans: -apple-system, "SF Pro Text", "Inter", "Helvetica Neue",
+    system-ui, sans-serif;
+  /* Display serif for headings — self-hosted via @fontsource. */
+  --font-serif: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
 
-  /* Apple-like palette: near-black ink on off-white, single blue accent */
-  --color-ink: #1d1d1f;
-  --color-ink-soft: #424245;
-  --color-muted: #6e6e73;
-  --color-hairline: #d2d2d7;
-  --color-canvas: #fbfbfd;
-  --color-surface: #ffffff;
-  --color-accent: #0071e3;
-  --color-accent-hover: #0077ed;
+  /* Neutral monochrome: near-black ink on light grey, greys do the hierarchy.
+     muted passes 4.5:1 on canvas; faint is for large display text only. */
+  --color-ink: #141414;
+  --color-ink-soft: #3d3d3d;
+  --color-muted: #6a6a6a;
+  --color-faint: #8c8c8c;
+  --color-hairline: #dedede;
+  --color-canvas: #f4f4f4;
+  --color-surface: #fafafa;
+  --color-tile: #e9e9e9;
+  /* Kept as tokens so existing classes resolve; now ink, not blue. */
+  --color-accent: #141414;
+  --color-accent-hover: #2e2e2e;
+  /* The one colour: calls to action only, with white text.
+     #cc4a12 vs white = 4.6:1 and the hover #b93d0a = 5.6:1 (AA for small text).
+     The brighter #ff5a1f only managed 3.1:1 with white. */
+  --color-highlight: #cc4a12;
+  --color-highlight-hover: #b93d0a;
 
-  --radius-card: 1.75rem;
+  --radius-card: 1.25rem;
 
-  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 40px rgba(0, 0, 0, 0.06);
-  --shadow-lift: 0 2px 6px rgba(0, 0, 0, 0.06), 0 24px 60px rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 1px 2px rgba(20, 19, 20, 0.04), 0 10px 30px rgba(20, 19, 20, 0.05);
+  --shadow-lift: 0 2px 6px rgba(20, 19, 20, 0.06), 0 20px 50px rgba(20, 19, 20, 0.08);
 }
 
 @layer base {
@@ -33,11 +44,20 @@
     background-color: var(--color-canvas);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    font-size: 15px;
     letter-spacing: -0.01em;
   }
 
+  h1,
+  h2 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-optical-sizing: auto;
+    letter-spacing: -0.025em;
+  }
+
   ::selection {
-    background-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
+    background-color: color-mix(in srgb, var(--color-ink) 14%, transparent);
   }
 }
 
@@ -48,28 +68,179 @@
     scroll-margin-top: 5.5rem;
   }
 
-  /* Scroll-reveal: hidden until .is-visible is toggled by IntersectionObserver */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition:
-      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
-  }
-
-  .reveal.is-visible {
-    opacity: 1;
-    transform: none;
-  }
-
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
     }
-    .reveal {
-      opacity: 1;
-      transform: none;
+  }
+}
+
+/* ── Section stack ───────────────────────────────────────────────────────────
+   Every direct <section> of [data-deck] is a sticky card; the next one slides
+   over it. --deck-top (set by useSectionStack) is 0 for short cards and
+   negative for tall ones, so a tall card sticks by its bottom edge only after
+   it has been read in full. --deck-dim drives the step-back darkening. */
+
+@layer components {
+  /* Cards must be opaque to cover each other; bg-* utilities still win. */
+  [data-deck] > section {
+    background-color: var(--color-canvas);
+  }
+}
+
+/* Unlayered so it beats utilities like `relative` on the hero. */
+[data-deck] {
+  /* What shows around a card as it steps back. Kept light so the dark nav
+     pill never sinks into it. */
+  background-color: #d6d6d6;
+}
+
+[data-deck] > section {
+  position: sticky;
+  top: var(--deck-top, 0px);
+}
+
+[data-deck] > section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background-color: #000;
+  opacity: var(--deck-dim, 0);
+  pointer-events: none;
+}
+
+/* ── Floating navbar, themed for this site ─────────────────────────────────
+   Dark text over the light hero; once docked it becomes a dark pill with
+   light text. */
+.fnb_wrap.site-nav {
+  --fnb-ink: var(--color-ink);
+  --fnb-fg: var(--color-ink);
+  --fnb-ring: var(--color-accent);
+  --fnb-sans: var(--font-sans);
+  --fnb-margin: clamp(20px, 3vw, 48px);
+}
+
+.site-nav .fnb_nav {
+  transition: color 0.3s cubic-bezier(0.3, 0.9, 0.1, 1);
+}
+
+.site-nav.is-docked .fnb_nav {
+  color: #f5f5f7;
+}
+
+.site-nav .fnb_link {
+  position: relative;
+}
+
+/* CV: the nav's call to action, in the highlight colour in both states. */
+.site-nav .fnb_cta {
+  color: #fff;
+}
+
+.site-nav .fnb_cta::before,
+.site-nav .fnb_cta:hover::before {
+  opacity: 1;
+  background-color: var(--color-highlight);
+  transition: background-color 0.2s ease;
+}
+
+.site-nav .fnb_cta:hover::before {
+  background-color: var(--color-highlight-hover);
+}
+
+/* The deck card you're on. */
+.site-nav .fnb_link[aria-current="true"] {
+  opacity: 1;
+}
+
+.site-nav .fnb_link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 999px;
+  background-color: currentColor;
+  opacity: 0;
+  transform: scale(0);
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s cubic-bezier(0.3, 0.9, 0.1, 1);
+}
+
+.site-nav .fnb_link[aria-current="true"]::after {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Alternating timeline dots ──────────────────────────────────────────────
+   A small core that turns ink once the line passes it; the newest reached
+   dot grows a ring. The ring's fill hides the line behind it. */
+.atl-dot {
+  position: relative;
+  z-index: 1;
+  width: 15px;
+  height: 15px;
+}
+
+.atl-dot::before,
+.atl-dot::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+}
+
+.atl-dot::before {
+  inset: 0;
+  border: 1px solid var(--color-ink);
+  background-color: var(--color-surface);
+  opacity: 0;
+  transform: scale(0.35);
+  transition:
+    opacity 0.3s ease,
+    transform 0.5s cubic-bezier(0.3, 0.9, 0.1, 1);
+}
+
+.atl-dot::after {
+  inset: 5px;
+  background-color: var(--color-faint);
+  transition: background-color 0.3s ease;
+}
+
+.atl-dot.is-passed::after {
+  background-color: var(--color-ink);
+}
+
+.atl-dot.is-current::before {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Expandable details ─────────────────────────────────────────────────────
+   Smooth open/close for <details class="expand"> where the browser supports
+   animating ::details-content; elsewhere it simply opens instantly. */
+@supports selector(::details-content) {
+  .expand {
+    interpolate-size: allow-keywords;
+  }
+
+  .expand::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size 0.3s cubic-bezier(0.3, 0.9, 0.1, 1),
+      content-visibility 0.3s allow-discrete;
+  }
+
+  .expand[open]::details-content {
+    block-size: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .expand::details-content {
       transition: none;
     }
   }

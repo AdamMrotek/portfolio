@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Reveal } from "./Reveal";
 
 type Background = "canvas" | "surface";
 
@@ -10,64 +9,45 @@ const backgroundClass: Record<Background, string> = {
 };
 
 type SectionHeaderProps = {
-  /** Small blue line shown above the title. */
-  eyebrow: string;
-  /** Optional id for the eyebrow text (e.g. for anchor links). */
-  eyebrowId?: string;
   title: string;
   /** Optional supporting paragraph under the title. */
   description?: ReactNode;
 };
 
 /**
- * The standard heading every section shares: a blue eyebrow over a large title,
- * with an optional supporting line. Kept separate from `Section` so the
- * grid-based sections (About, Contact) can drop it inside a column.
+ * The heading every section shares: a serif title with an optional
+ * supporting line. Kept separate from `Section` so the grid-based sections
+ * (About, Contact) can drop it inside a column.
  */
-export function SectionHeader({ eyebrow, eyebrowId, title, description }: SectionHeaderProps) {
+export function SectionHeader({ title, description }: SectionHeaderProps) {
   return (
     <>
-      <p
-        id={eyebrowId}
-        className="text-sm font-medium text-accent"
-      >
-        {eyebrow}
-      </p>
-      <h2 className="mt-3 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-        {title}
-      </h2>
+      <h2 className="text-[2rem] leading-[1.05] text-ink sm:text-[2.6rem]">{title}</h2>
       {description && (
-        <p className="mt-5 text-lg leading-relaxed text-muted">{description}</p>
+        <p className="mt-5 max-w-xl leading-relaxed text-muted">{description}</p>
       )}
     </>
   );
 }
 
 type SectionProps = SectionHeaderProps & {
+  /** Anchor id, used by the nav. */
   id?: string;
   background?: Background;
-  /** Container width — most sections are 6xl; the reading-heavy timeline is 4xl. */
-  width?: "4xl" | "6xl";
-  /** Extra header content rendered under the title block (e.g. a meta list). */
-  headerExtra?: ReactNode;
-  /** Make this section a gentle scroll-snap point (snaps to its title). */
+  /** Make this section a gentle scroll-snap point. */
   snap?: boolean;
   children: ReactNode;
 };
 
 /**
  * Full section shell: consistent vertical rhythm, background, container width
- * and a scroll-revealed `SectionHeader`. The section body is passed as children.
+ * and a `SectionHeader`. The section body is passed as children.
  */
 export function Section({
   id,
-  eyebrow,
-  eyebrowId,
   title,
   description,
   background = "canvas",
-  width = "6xl",
-  headerExtra,
   snap = false,
   children,
 }: SectionProps) {
@@ -76,16 +56,10 @@ export function Section({
       id={id}
       className={`px-6 py-24 sm:py-32 ${backgroundClass[background]}${snap ? " snap-section" : ""}`}
     >
-      <div className={`mx-auto ${width === "4xl" ? "max-w-4xl" : "max-w-6xl"}`}>
-        <Reveal as="header" className="max-w-2xl">
-          <SectionHeader
-            eyebrow={eyebrow}
-            eyebrowId={eyebrowId}
-            title={title}
-            description={description}
-          />
-          {headerExtra}
-        </Reveal>
+      <div className="mx-auto max-w-6xl">
+        <header className="max-w-2xl">
+          <SectionHeader title={title} description={description} />
+        </header>
         {children}
       </div>
     </section>

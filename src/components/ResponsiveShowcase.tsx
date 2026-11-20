@@ -16,7 +16,7 @@ type ResponsiveShowcaseProps = {
  * Shows a product on desktop and mobile: the desktop screenshot sits in a
  * slightly-rounded 16:10 frame, with the mobile screenshot in an iPhone-14
  * (9:19.5) frame overlapping its bottom-right corner. Both frames get a light
- * border and a subtle gradient backing.
+ * border on a flat backing.
  */
 export function ResponsiveShowcase({
   desktopSrc,
@@ -50,7 +50,7 @@ export function ResponsiveShowcase({
         onClick={() => setOpen("desktop")}
         aria-label={`Enlarge ${label} desktop screenshot`}
         style={{ aspectRatio: desktopAspect }}
-        className="block w-full cursor-zoom-in overflow-hidden rounded-lg border border-black/10 bg-[linear-gradient(135deg,#ffffff,#eef1f5)] p-[3px] shadow-[0_18px_40px_-24px_rgba(15,23,42,0.45)]"
+        className="block w-full cursor-zoom-in overflow-hidden rounded-lg border border-hairline bg-surface p-[3px] shadow-[0_12px_32px_-20px_rgba(0,0,0,0.25)]"
       >
         <img
           src={desktopSrc}
@@ -65,7 +65,7 @@ export function ResponsiveShowcase({
         type="button"
         onClick={() => setOpen("mobile")}
         aria-label={`Enlarge ${label} mobile screenshot`}
-        className="absolute -bottom-5 right-3 w-[26%] max-w-[140px] cursor-zoom-in overflow-hidden rounded-[0.85rem] border border-black/10 bg-[linear-gradient(135deg,#ffffff,#eef1f5)] p-[3px] shadow-[0_18px_36px_-18px_rgba(15,23,42,0.55)] sm:-bottom-6 sm:right-6"
+        className="absolute -bottom-5 right-3 w-[26%] max-w-[140px] cursor-zoom-in overflow-hidden rounded-[0.85rem] border border-hairline bg-surface p-[3px] shadow-[0_12px_28px_-16px_rgba(0,0,0,0.3)] sm:-bottom-6 sm:right-6"
       >
         <div
           style={{ aspectRatio: mobileAspect }}
@@ -87,7 +87,7 @@ export function ResponsiveShowcase({
             aria-modal="true"
             aria-label={`${label} ${open} screenshot`}
             onClick={() => setOpen(null)}
-            className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-ink/80 p-4 backdrop-blur-sm sm:p-8"
+            className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-ink/90 p-4 sm:p-8"
           >
             <button
               type="button"
