@@ -121,14 +121,14 @@ export const aiProjects: Project[] = [
     eyebrow: "Voice agent",
     name: "Metafora",
     summary:
-      "Clinical voice intake. A patient opens a link and talks to an AI interviewer, and the clinician gets a structured, signed intake record with red flags escalated live. This deployment runs on synthetic data and is not a compliant clinical system.",
+      "Clinical voice intake. A patient opens a link and talks to an AI interviewer, and the clinician gets a structured, signed intake record with red flags escalated live.",
     tabs: [
       {
         label: "Product details",
         items: [
           {
             title: "Safety first",
-            text: "Predefined red-flag phrases are matched before the LLM sees anything, and the model escalates as a second check.",
+            text: "The agent is required to raise urgent and critical flags and escalate them for human review.",
           },
           {
             title: "Live clinician dashboard",
@@ -137,10 +137,6 @@ export const aiProjects: Project[] = [
           {
             title: "Low latency",
             text: "Each turn is a single pass, so the interviewer replies quickly and the conversation feels natural.",
-          },
-          {
-            title: "No half-finished records",
-            text: "A call can't end mid-question: the spoken reply is only released once the intake record is written.",
           },
           {
             title: "Full ledger",

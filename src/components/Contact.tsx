@@ -1,106 +1,105 @@
 import { SectionHeader } from "./Section";
-import { MailIcon } from "./ContactIcons";
-import { email, socials } from "../data/contact";
+import { useEffect, useState, type ComponentType } from "react";
+import {
+  CheckIcon,
+  CopyIcon,
+  DownloadIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+} from "./ContactIcons";
+import { email, github, linkedin } from "../data/contact";
 
-const FORM_ENDPOINT =
-  "https://formsubmit.co/52d56433f5bb53e85ac809fc8a6e6041";
+type ContactLink = {
+  label: string;
+  href: string;
+  Icon: ComponentType<{ className?: string }>;
+  external?: boolean;
+  download?: boolean;
+};
 
-// Where formsubmit.co sends the visitor after a successful submission.
-const FORM_REDIRECT = "https://adammrotek.github.io/portfolio/?sent=true#contact";
+const links: ContactLink[] = [
+  { label: "LinkedIn", href: linkedin, Icon: LinkedInIcon, external: true },
+  { label: "GitHub", href: github, Icon: GitHubIcon, external: true },
+  {
+    label: "CV",
+    href: `${import.meta.env.BASE_URL}Adam_Mrotek_CV_2026.pdf`,
+    Icon: DownloadIcon,
+    download: true,
+  },
+];
 
-export function Contact() {
-  const wasSent =
-    typeof window !== "undefined" &&
-    new URLSearchParams(window.location.search).get("sent") === "true";
+function EmailRow() {
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (!copied) return;
+    const t = setTimeout(() => setCopied(false), 2000);
+    return () => clearTimeout(t);
+  }, [copied]);
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+    } catch {
+      // Clipboard unavailable (e.g. insecure context); the address is still selectable.
+    }
+  };
 
   return (
-    <section id="contact" className="bg-surface px-6 py-24 sm:py-32">
-      <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-2">
-        <div>
+    <div className="inline-flex items-center gap-2 text-[15px] font-medium text-ink">
+      <MailIcon className="h-[18px] w-[18px] shrink-0 text-muted" />
+      <span className="select-all">{email}</span>
+      <button
+        type="button"
+        onClick={copy}
+        aria-label={copied ? "Email copied" : "Copy email address"}
+        title={copied ? "Copied" : "Copy"}
+        className="ml-1 inline-flex h-7 w-7 items-center justify-center rounded-md text-muted transition-colors hover:bg-ink/5 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+      >
+        {copied ? (
+          <CheckIcon className="h-4 w-4" />
+        ) : (
+          <CopyIcon className="h-4 w-4" />
+        )}
+      </button>
+      <span aria-live="polite" className="sr-only">
+        {copied ? "Email copied to clipboard" : ""}
+      </span>
+    </div>
+  );
+}
+
+export function Contact() {
+  return (
+    <section id="contact" className="bg-surface px-6 py-20 sm:py-24">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 text-center">
+        <div className="[&_p]:mx-auto">
           <SectionHeader
             title="Get in touch"
-            description="I'm open to full-stack and AI engineering roles. Email me directly, or use the form and I'll reply."
+            description="I'm open to full-stack and AI engineering roles. Email me directly."
           />
+        </div>
 
-          <div className="mt-10">
-            <a
-              href={`mailto:${email}`}
-              className="inline-flex items-center gap-2 text-[15px] text-ink underline decoration-hairline underline-offset-4 transition-colors hover:decoration-ink"
-            >
-              <MailIcon className="h-4 w-4 text-muted" />
-              {email}
-            </a>
-          </div>
-
-          <div className="mt-5 flex flex-wrap gap-5">
-            {socials.map((social) => (
+        <ul className="flex flex-col items-center gap-4">
+          <li>
+            <EmailRow />
+          </li>
+          {links.map(({ label, href, Icon, external, download }) => (
+            <li key={label}>
               <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-                className="text-[13px] font-medium text-muted transition-colors hover:text-ink"
+                href={href}
+                {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+                {...(download ? { download: "" } : {})}
+                className="group inline-flex items-center gap-2 text-[15px] font-medium text-ink underline decoration-transparent underline-offset-4 transition-colors hover:decoration-ink"
               >
-                {social.label}
+                <Icon className="h-[18px] w-[18px] shrink-0 text-muted transition-colors group-hover:text-ink" />
+                {label}
               </a>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <form
-            action={FORM_ENDPOINT}
-            method="POST"
-            className="flex flex-col gap-5 rounded-[var(--radius-card)] bg-canvas p-6 sm:p-8"
-          >
-            <input type="hidden" name="_next" value={FORM_REDIRECT} />
-
-            {wasSent && (
-              <p className="rounded-lg bg-tile px-4 py-3 text-[13px] text-ink">
-                Thanks, your message was sent. I'll get back to you soon.
-              </p>
-            )}
-            <label className="flex flex-col gap-2 text-xs text-muted">
-              Name
-              <input
-                type="text"
-                name="name"
-                required
-                placeholder="Your name"
-                className="rounded-lg border border-hairline bg-surface px-3.5 py-2.5 text-[14px] text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
-              />
-            </label>
-
-            <label className="flex flex-col gap-2 text-xs text-muted">
-              Email
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="you@example.com"
-                className="rounded-lg border border-hairline bg-surface px-3.5 py-2.5 text-[14px] text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
-              />
-            </label>
-
-            <label className="flex flex-col gap-2 text-xs text-muted">
-              Message
-              <textarea
-                name="message"
-                required
-                rows={5}
-                placeholder="Tell me about your project…"
-                className="resize-y rounded-lg border border-hairline bg-surface px-3.5 py-2.5 text-[14px] text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
-              />
-            </label>
-
-            <button
-              type="submit"
-              className="mt-1 self-start rounded-full bg-highlight px-5 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-highlight-hover"
-            >
-              Send message
-            </button>
-          </form>
-        </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

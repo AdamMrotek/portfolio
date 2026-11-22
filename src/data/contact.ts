@@ -5,8 +5,3 @@ export const email = `${emailUser}@${emailDomain}`;
 
 export const github = "https://github.com/AdamMrotek";
 export const linkedin = "https://www.linkedin.com/in/adam-mrotek/";
-
-export const socials = [
-  { label: "GitHub", href: github },
-  { label: "LinkedIn", href: linkedin },
-];

@@ -12,7 +12,6 @@ as the flagship project alongside selected work and a current tech stack.
 - **Vite 6**
 - **Tailwind CSS v4**
 - Scroll-reveal animations via a lightweight `IntersectionObserver` hook
-- Contact form powered by [FormSubmit](https://formsubmit.co/)
 
 ## Development
 

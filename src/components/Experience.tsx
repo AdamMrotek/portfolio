@@ -50,7 +50,7 @@ function termPattern(term: string): RegExp {
 
 const bulletText = (b: Bullet) => `${b.lead ?? ""} ${b.text}`;
 
-/** Wraps every match of the active term in a highlight. */
+/** Wraps every match of the active term in a highlight. The ring (not padding) pads the tint without widening the text, so nothing reflows. */
 function Marked({ text, term }: { text: string; term: string | null }) {
   if (!term) return <>{text}</>;
   const parts = text.split(termPattern(term));
@@ -58,7 +58,7 @@ function Marked({ text, term }: { text: string; term: string | null }) {
     <>
       {parts.map((part, i) =>
         i % 2 === 1 ? (
-          <mark key={i} className="rounded-sm bg-highlight/15 px-0.5 text-ink">
+          <mark key={i} className="rounded-sm bg-highlight/15 text-ink ring-2 ring-highlight/15">
             {part}
           </mark>
         ) : (
@@ -199,7 +199,6 @@ function SelectedWork({ entry, term }: { entry: ExperienceEntry; term: string | 
   return (
     <div>
       <div data-atl-rise>
-        <p className="text-xs text-muted">{first.label ?? "Selected work"}</p>
         <Bullets bullets={first.bullets} term={term} />
       </div>
       {rest.length > 0 && (
@@ -298,7 +297,11 @@ export function Experience() {
     <Section
       id="experience"
       title="Experience"
-      description={positioning}
+      description={positioning.split("\n").map((line) => (
+        <span key={line} className="block text-pretty [&+&]:mt-3">
+          {line}
+        </span>
+      ))}
       background="surface"
     >
       <Timeline />

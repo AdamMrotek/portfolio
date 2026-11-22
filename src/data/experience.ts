@@ -22,7 +22,7 @@ export const facts = {
 };
 
 export const positioning =
-  "Senior software engineer with 4+ years of commercial experience leading front-end delivery on complex web applications, from TypeScript design systems to hands-on Python and FastAPI back ends. I work mostly in React and Next.js with TanStack Query and shadcn/ui, and I'm currently running a live AI product built on LLMs.";
+  "Software engineer with 4+ years of commercial experience leading front-end delivery on complex web applications, from TypeScript design systems to hands-on Python and FastAPI back ends.\nI'm currently building production AI\u00a0apps end\u00a0to\u00a0end.";
 
 export const experience: ExperienceEntry[] = [
   {
@@ -36,44 +36,22 @@ export const experience: ExperienceEntry[] = [
       "Delivered across Croud's marketing automation and AI tools, used by 3,000+ people. I co-architected the TypeScript design system, took features and whole internal products from spec to production, and built the AI tooling used in client pitches.",
     sections: [
       {
-        label: "Selected work",
         bullets: [
           {
-            lead: "Croud Control, the core marketing platform.",
-            text: "Owned front-end delivery for the main product. Co-architected the TypeScript component design system (React, Tailwind, shadcn/ui, Storybook) and moved legacy screens to type-safe patterns, which sped up feature work across product areas.",
+            lead: "AI tooling.",
+            text: "Planned internal AI tools and agent pipelines with stakeholders, then built them end to end: TypeScript and React interfaces on a Python FastAPI back end, all Dockerised. The apps were used to demo our AI work in client pitches.",
           },
           {
             lead: "Social Influencer Platform.",
-            text: "Early engineer on an in-house influencer-marketing platform that replaced a £17M quote from an outside agency. Built user profiles, dashboards and registration-of-interest flows to strict Figma specs against the FastAPI back end, and set up a Figma-to-code pipeline.",
+            text: "Early engineer on an in-house influencer-marketing platform that replaced a £17M quote from an outside agency. Worked closely with the designer to build user profiles, dashboards and registration-of-interest flows to strict Figma specs, and contributed to the Python FastAPI back end behind them. Set up a Figma-to-TypeScript pipeline and delivered against a tight deadline.",
           },
           {
             lead: "Taxonomy Tool.",
-            text: "Built an internal app for aligning marketing tags, front end and supporting back end. It was projected to save about £100k a month by removing tagging inconsistencies between teams and cleaning data for analytics.",
+            text: "Built an internal app for aligning marketing tags, covering both the React front end and the supporting Python FastAPI back end. It was projected to save about £100k a month by removing tagging inconsistencies between teams and cleaning data for analytics.",
           },
           {
-            lead: "AI tooling.",
-            text: "Built the front-end apps that demoed internal AI tools and agent pipelines in client pitches, and shipped a Claude sub-agent that turns Figma designs into code in our codebase. Other teams adopted it, and it helped win new business.",
-          },
-        ],
-      },
-      {
-        label: "Cross-cutting practice",
-        bullets: [
-          {
-            lead: "Platform modernisation:",
-            text: "moved legacy screens onto type-safe React, shadcn/ui and Tailwind, with reusable component libraries the whole team builds on.",
-          },
-          {
-            lead: "Developer tooling:",
-            text: "built internal Claude and MCP skills and sub-agents that automate repetitive coding tasks and enforce code-quality standards.",
-          },
-          {
-            lead: "Automated QA:",
-            text: "unit tests in Vitest, end-to-end tests in Playwright and component tests in Storybook, all run in Docker.",
-          },
-          {
-            lead: "Design partnership:",
-            text: "worked closely with UX from Figma to code, including on the Social Influencer Platform, where pixel-perfect fidelity was written into the contract.",
+            lead: "Croud Control, the core marketing platform.",
+            text: "Delivered features end to end and migrated existing features to TypeScript.",
           },
         ],
       },
@@ -94,18 +72,19 @@ export const experience: ExperienceEntry[] = [
       {
         bullets: [
           {
-            text: "Built applications in React, Vue, Vuex and Nuxt, plus canvas tooling with Fabric.js and the Canvas API for retail discovery products.",
+            lead: "Apps.",
+            text: "Built applications in React, Vue, Vuex and Nuxt, plus canvas tooling with Fabric.js and the Canvas API for retail discovery products, and raised their Lighthouse and SEO scores.",
           },
           {
+            lead: "Data pipelines.",
             text: "Cleaned up unstructured and incomplete datasets with Python, Google Colab and GCP to improve data accuracy.",
           },
           {
+            lead: "Prototyping.",
             text: "Prototyped features that drove successful upsells across multiple clients.",
           },
           {
-            text: "Raised Lighthouse and SEO scores.",
-          },
-          {
+            lead: "Mentoring.",
             text: "Mentored junior engineers through code reviews and pairing sessions, helping raise code quality and shorten onboarding.",
           },
         ],
@@ -122,7 +101,29 @@ export const experience: ExperienceEntry[] = [
     location: "London",
     kind: "pre",
     summary:
-      "My career before software. I worked on airport and data-centre projects using platform-based design, which is where I learned to reason about large, interdependent systems.",
+      "My career before software. Platform-based design on large airport and data-centre projects is where I learned to reason about large, interdependent systems.",
+    sections: [
+      {
+        bullets: [
+          {
+            lead: "BIM automation.",
+            text: "Created a BIM automation pipeline.",
+          },
+          {
+            lead: "Airport projects.",
+            text: "Worked on projects at Stansted and Heathrow.",
+          },
+          {
+            lead: "Data centre project.",
+            text: "Drove multi-discipline coordination between the structural, mechanical and electrical engineers and the architecture team.",
+          },
+          {
+            lead: "Diagrams and planning.",
+            text: "Created functional diagrams and prepared presentations for planning permission applications.",
+          },
+        ],
+      },
+    ],
     stack: "BIM, Revit, AutoCAD, parametric design, Adobe Creative Suite",
   },
 ];

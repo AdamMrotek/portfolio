@@ -6,7 +6,6 @@ import { Experience } from "./components/Experience";
 import { Stack } from "./components/Stack";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
 import { useScrollSnap } from "./hooks/useScrollSnap";
 import { useSectionStack } from "./hooks/useSectionStack";
 import { useDeckNavigation } from "./hooks/useDeckNavigation";
@@ -29,7 +28,6 @@ export default function App() {
         <About />
         <Contact />
       </main>
-      <Footer />
     </>
   );
 }
